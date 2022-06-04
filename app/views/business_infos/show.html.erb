@@ -1,0 +1,15 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Business type:</strong>
+  <%= @business_info.business_type %>
+</p>
+
+<p>
+  <strong>Class code:</strong>
+  <%= @business_info.class_code %>
+</p>
+
+<%= link_to 'Edit', edit_business_info_path(@business_info) %> |
+<%= link_to 'Back', business_infos_path %> |
+<%= link_to 'New Business Info', new_business_info_path %>

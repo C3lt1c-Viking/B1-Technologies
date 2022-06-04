@@ -1,0 +1,114 @@
+<% provide(:title, 'About') %>
+<div class="w-full px-6 py-12 bg-white"style="background-image: url('https://images.squarespace-cdn.com/content/v1/5b1c450a5ffd2031c58b74c1/1535860027471-WZ2TN6UV3QAV8WUTH74H/ke17ZwdGBToddI8pDm48kFTEgwhRQcX9r3XtU0e50sUUqsxRUqqbr1mOJYKfIPR7LoDQ9mXPOjoJoqy81S2I8N_N4V1vUb5AoIIIbLZhVYxCRW4BPu10St3TBAUQYVKcW7uEhC96WQdj-SwE5EpM0lAopPba9ZX3O0oeNTVSRxdHAmtcci_6bmVLoSDQq_pb/maxresdefault.jpg?format=2500w'); background-size: cover; background-attahment: fixed">
+  <div class="container max-w-4xl mx-auto text-center pb-10">
+    <h3 class="text-xl md:text-2xl leading-tight text-center max-w-md mx-auto text-white-900 mb-12" style="color: #FFF">
+      About <strong>B1 Technologies</strong>
+    </h3>
+    <h2 class="text-l md:text-xl leading-tight text-center max-w-md mx-auto text-white-900 mb-12" style="color: #FFF;">
+      Please watch each video on B1 Technologies for More Information;
+    </h2>
+  </div>
+
+  <div class="container max-w-4xl mx-auto text-center flex flex-wrap items-start md:flex-no-wrap" style="background-color: rgba(0,0,0,0.8)">
+
+    <div class="my-4 w-full md:w-1/3 flex flex-col items-center justify-center px-4">
+
+      <h2 class="text-xl leading-tight mb-2" style="color: #FFF;">How To Log Into Your Account</h2>
+        <%= video_tag 'user_registration_video.mkv', :size => "540x540", :controls => true, style: 'align: center; text-align: center; margin: 10px auto' %>
+    </div>
+
+    <div class="my-4 w-full md:w-1/3 flex flex-col items-center justify-center px-4">
+
+      <h2 class="text-xl leading-tight mb-2" style="color: #FFF;">How To Register For An Account</h2>
+        <%= video_tag 'user_registration_video.mkv', :size => "540x540", :controls => true, style: 'align: center; text-align: center; margin: 10px auto' %>
+    </div>
+
+    <div class="my-4 w-full md:w-1/3 flex flex-col items-center justify-center px-4">
+
+      <h2 class="text-xl leading-tight mb-2" style="color: #FFF">Navigating Your Portal System</h2>
+        <%= video_tag 'user_registration_video.mkv', :size => "540x540", :controls => true, style: 'align: center; text-align: center; margin: 10px auto' %>
+    </div>
+
+  </div>
+</div>
+<!-- /home content -->
+
+
+
+<script type="text/javascript">
+  function OverViewBTN()
+  {
+    var vid = document.getElementById("Overview_Video_Div");
+    if (vid.style.display === "none")
+    {
+      vid.style.display = "block";
+    }
+    else
+    {
+      vid.style.display = "none";
+    }
+  }
+  function RegVidBTN()
+  {
+    var vid1 = document.getElementById("Registration_Video_Div");
+    if (vid1.style.display === "none")
+    {
+      vid1.style.display = "block";
+      document.getElementById("Login_Video_Div").style.display = "none";
+      document.getElementById("Profile_Video_Div").style.display = "none";
+      document.getElementById("Form_Video_Div").style.display = "none";
+    }
+    else
+    {
+      vid1.style.display = "none";
+    }
+  }
+
+  function LogVidBTN()
+  {
+    var vid2 = document.getElementById("Login_Video_Div");
+    if (vid2.style.display === "none")
+    {
+      vid2.style.display = "block";
+      document.getElementById("Registration_Video_Div").style.display = "none";
+      document.getElementById("Profile_Video_Div").style.display = "none";
+      document.getElementById("Form_Video_Div").style.display = "none";
+    }
+    else
+    {
+      vid2.style.display = "none";
+    }
+  }
+
+  function ProfileVidBTN()
+  {
+    var vid3 = document.getElementById("Profile_Video_Div");
+    if (vid3.style.display === "none")
+    {
+      vid3.style.display = "block";
+      document.getElementById("Registration_Video_Div").style.display = "none";
+      document.getElementById("Login_Video_Div").style.display = "none";
+      document.getElementById("Form_Video_Div").style.display = "none";
+    }
+    else
+    {
+      vid3.style.display = "none";
+    }
+  }
+
+  function FormVidBTN()
+  {
+    var vid4 = document.getElementById("Form_Video_Div");
+    if (vid4.style.display === "none")
+    {
+      vid4.style.display = "block";
+      document.getElementById("Registration_Video_Div").style.display = "none";
+      document.getElementById("Login_Video_Div").style.display = "none";
+      document.getElementById("Profile_Video_Div").style.display = "none";
+    }
+    else
+    {
+      vid4.style.display = "none";
+    }
+  }
+</script>

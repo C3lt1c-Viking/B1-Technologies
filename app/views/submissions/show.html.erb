@@ -1,0 +1,60 @@
+<div class="min-h-screen bg-gray-200 flex justify-center items-center">
+   <div class="max-w-sm bg-white border-2 border-gray-300 p-6 rounded-md tracking-wide shadow-2xl">
+      <div id="header" class="flex items-center mb-4">
+         <img alt="avatar" class="w-20 rounded-full border-2 border-yellow-500" src="https://upload.wikimedia.org/wikipedia/en/7/72/Markel_Corporation_logo.jpg" />
+         <div id="header-text" class="leading-5 ml-6 sm">
+            <h4 id="name" class="text-xl font-semibold">Markel Insurance</h4>
+            <h5 id="job" class="font-semibold text-yellow-500">Quote Section</h5>
+         </div>
+      </div>
+      <div id="quote">
+         <q class="italic text-red-600">
+           <br/>
+           <p>Policy ID: </p>
+           <p>Final Premium: </p>
+           <br/>
+         </q><br/>
+         <button class="bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">Bind Markel</button>
+         <button class="bg-transparent hover:bg-yellow-500 text-yellow-700 font-semibold hover:text-white py-2 px-4 border border-yellow-500 hover:border-transparent rounded">E-Mail</button>
+      </div>
+    </div>
+    <div class="max-w-sm bg-white border-2 border-gray-300 p-6 rounded-md tracking-wide shadow-2xl">
+      <div id="header" class="flex items-center mb-4">
+        <img alt="IFG" class="w-20 rounded-full border-2 border-yellow-500" src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTQ0osH8KBYgi8j0b-2o2-V1Qt15Vsgv-I_lg&usqp=CAU" />
+        <div id="header-text" class="leading-5 ml-6 sm">
+          <h4 id="name" class="text-xl font-semibold">IFG Insurance</h4>
+          <h5 id="job" class="font-semibold text-lue-500">Quote Section</h5>
+        </div>
+      </div>
+      <div id="quote">
+        <q class="italic text-blue-600">
+          <br/>
+            <p>Policy ID:  <%= @policy_id  %></p>
+            <p>Final Premium:  <%= @final_premium  %></p>
+          <br/>
+        </q><br/>
+        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">Bind IFG</button>
+        <button class="bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded">E-Mail</button>
+      </div>
+   </div>
+</div>
+
+<br/>
+<br/>
+<p style="font-size: 40px; text-align: center;">Complete Form Quote Details:</p>
+<div style="padding: 20px; border: 3px solid; margin: 10px auto;">
+  <%= @submission.data %>
+</div>
+<br/>
+<br/>
+<p style="font-size: 40px; text-align: center;">IFG Form Submission Results:</p>
+<div style="padding: 20px; border: 3px solid #000; margin: 10px auto;">
+  <%= @submission.ifg_result %>
+</div>
+<br/>
+<br/>
+<br/>
+<p style="font-size: 40px; text-align: center;">Markel Form Submission Results:</p>
+<div style="padding: 20px; border: 3px solid #00F; margin: 10px auto;">
+  <%= @submission.markel_results %>
+</div>

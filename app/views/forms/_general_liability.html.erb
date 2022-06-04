@@ -1,0 +1,1278 @@
+<%= form_tag "/submissions" do %>
+
+
+  <p style="font-family: 'Orbitron', sans-serif; color: #FFF; text-align: center"><%= current_user.agency %> | <%= current_user.agency_code %></p>
+<div class="flex items-center  w-full bg-teal-lighter">
+  <div class="w-full bg-white rounded shadow-lg p-8 m-4">
+    <h1 class="block w-full text-center text-grey-darkest mb-6">
+      Start Common Information
+    </h1>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data { EffectiveDate } -->
+      <!-- Markel Data { PolicyEffectiveDate } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data { EffectiveDt } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { CommlPkg PolicyQuoteInqRs/CommlPolicy/Form/EffectiveDt } -->
+      <%= label_tag(:effective_date, 'Effective Date:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= date_field_tag :effective_date, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data { ExpriationDate } -->
+      <!-- Markel Data { PolicyExpirationDate } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data { ExpirationDt } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { CommlPkgPolicyQuoteInqRq /CommlPolicy/ContractTerm/ExpirationDt } -->
+      <%= label_tag(:expiration_date, 'Expiration Date:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= date_field_tag :expiration_date, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:business_type, 'Business Type:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :business_type, '', class: 'form_input', placeholder: 'Pools', list: 'biz_type' %>
+    </div>
+<!-- Update  This  Information -->
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data { ClassCode } -->
+      <!-- Markel Data { GlClassification } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data { ClassCd } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { GeneralLiabilityClassification/ClassCd } -->
+      <%= label_tag(:class_code, 'Class Code:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :class_code, '', class: 'border py-2 px-3 text-grey-darkest', required: true, data: {behavior:"autocomplete"} %>
+    </div>
+    <h1 class="block w-full text-center text-grey-darkest mb-6">
+      End Common Information
+    </h1>
+  </div>
+</div>
+
+
+<div class="flex items-center w-full bg-teal-lighter">
+  <div class="w-full bg-white rounded shadow-lg p-8 m-4">
+    <h1 class="block w-full text-center text-grey-darkest mb-6">
+      Start Agency Information
+    </h1>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:producer_id, 'Producer ID:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= number_field_tag :producer_id, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:producer_agency, 'Producer Agency:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :producer_agency, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:producer_name, 'Producer Name:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :producer_name, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:behalf_of, 'On Behalf of:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :behalf_of, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:producer_email, 'Producers Email:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= email_field_tag :producer_email, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:behalf_email, 'On behalf of Email:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= email_field_tag :behalf_email, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:agency_license_num, 'Agency License #:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :agency_license_num, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:broker_license_num, 'Broker License #:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :broker_license_num, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:agency_adr, 'Address:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :agency_adr, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:agency_adr1, 'Address 2:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :agency_adr1, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:agency_city, 'City:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :agency_city, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:agency_state, 'State:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="agency_state" name="agency_state" class="border py-2 px-3 text-grey-darkest" required="true">
+        <option value="AL">Alabama</option>
+        <option value="AK">Alaska</option>
+        <option value="AZ">Arizona</option>
+        <option value="AR">Arkansas</option>
+        <option value="CA">California</option>
+        <option value="CO">Colorado</option>
+        <option value="CT">Connecticut</option>
+        <option value="DE">Delaware</option>
+        <option value="DC">District Of Columbia</option>
+        <option value="FL">Florida</option>
+        <option value="GA">Georgia</option>
+        <option value="HI">Hawaii</option>
+        <option value="ID">Idaho</option>
+        <option value="IL">Illinois</option>
+        <option value="IN">Indiana</option>
+        <option value="IA">Iowa</option>
+        <option value="KS">Kansas</option>
+        <option value="KY">Kentucky</option>
+        <option value="LA">Louisiana</option>
+        <option value="ME">Maine</option>
+        <option value="MD">Maryland</option>
+        <option value="MA">Massachusetts</option>
+        <option value="MI">Michigan</option>
+        <option value="MN">Minnesota</option>
+        <option value="MS">Mississippi</option>
+        <option value="MO">Missouri</option>
+        <option value="MT">Montana</option>
+        <option value="NE">Nebraska</option>
+        <option value="NV">Nevada</option>
+        <option value="NH">New Hampshire</option>
+        <option value="NJ">New Jersey</option>
+        <option value="NM">New Mexico</option>
+        <option value="NY">New York</option>
+        <option value="NC">North Carolina</option>
+        <option value="ND">North Dakota</option>
+        <option value="OH">Ohio</option>
+        <option value="OK">Oklahoma</option>
+        <option value="OR">Oregon</option>
+        <option value="PA">Pennsylvania</option>
+        <option value="RI">Rhode Island</option>
+        <option value="SC">South Carolina</option>
+        <option value="SD">South Dakota</option>
+        <option value="TN">Tennessee</option>
+        <option value="TX">Texas</option>
+        <option value="UT">Utah</option>
+        <option value="VT">Vermont</option>
+        <option value="VA">Virginia</option>
+        <option value="WA">Washington</option>
+        <option value="WV">West Virginia</option>
+        <option value="WI">Wisconsin</option>
+        <option value="WY">Wyoming</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:agency_zip, 'Zip:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :agency_zip, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:agency_tel, 'Phone:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :agency_tel, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <!-- IFG Data {  } -->
+      <!-- Markel Data {  } -->
+      <!-- Nationwide Data {  } -->
+      <!-- Atlantic Casualty Data {  } -->
+      <!-- Global Indemnity Data {  } -->
+      <!-- Penn-America Data { /ClassCd } -->
+      <%= label_tag(:agency_fax, 'Fax:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :agency_fax, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <h1 class="block w-full text-center text-grey-darkest mb-6">
+      End Agency Information
+    </h1>
+  </div>
+</div>
+
+<div class="flex items-center w-full bg-teal-lighter">
+  <div class="w-full bg-white rounded shadow-lg p-8 m-4">
+    <h1 class="block w-full text-center text-grey-darkest mb-6">Start Building Information</h1>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:construction_type, 'Construction Type:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :construction_type, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:protection_class, 'Protection Class:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :protection_class, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:year_built, 'Year Built:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :year_built, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:total_area, 'Total Area:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :total_area, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:price_per_square_foot, 'Price Per Square Foot:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :price_per_square_foot, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:recent_building_updates, 'Recent Building Updates:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :recent_building_updates, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:recent_roof_replacement, 'Recent Roof Replacement:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :recent_roof_replacement, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:roof_uninsurable, 'Roof Uninsurable:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :roof_uninsurable, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:sprinkler_system, 'Sprinkler System:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :sprinkler_system, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:central_burglar_alarm, 'Central Burglar Alarm:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :central_burglar_alarm, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:central_fire_alarm, 'Central Fire Alarm:', class: 'mb-2 uppercase font-bold text-lg text-grey-darekst') %>
+      <%= text_field_tag :central_fire_alarm, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:number_stories, 'Number of Stories:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :number_stories, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:causes_of_loss, 'Causes of Loss:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :causes_of_loss, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:wind_hail, 'Wind Hail:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :wind_hail, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:wind_hail_deductible, 'Wind Hail Deductible:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :wind_hail_deductible, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:exclude_vandalism, 'Exclude Vandalism:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :exclude_vandalism, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:vandalism_sub_limit, 'Vandalism Sub Limit:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :vandalism_sub_limit, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:theft_sub_limit, 'Theft Sub Limit:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :theft_sub_limit, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:theft_deductible, 'Theft Deductible:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :theft_deductible, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:aop_deductible, 'AOP Deductible:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :aop_deductible, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:glass_deductible, 'Glass Deductible:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :glass_deductible, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <h1 class="block w-full text-center text-grey-darkest mb-6">End Building Information</h1>
+  </div>
+</div>
+
+<div class="flex items-center  w-full bg-teal-lighter">
+  <div class="w-full bg-white rounded shadow-lg p-8 m-4">
+    <h1 class="block w-full text-center text-grey-darkest mb-6">Start Insured Information</h1>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:name_insured, 'Name Insured:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :name_insured, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:dba_name, 'DBA Name:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :dba_name, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:url, 'Website URL:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :url, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:street_address, 'Street Address:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :street_address, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:address, 'Address 2:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :address, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:city, 'City:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :city, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:state, 'State:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="state" name="state" class="border py-2 px-3 text-grey-darkest" required="true">
+        <option value="AL">Alabama</option>
+  	    <option value="AK">Alaska</option>
+  	    <option value="AZ">Arizona</option>
+  	    <option value="AR">Arkansas</option>
+  	    <option value="CA">California</option>
+  	    <option value="CO">Colorado</option>
+  	    <option value="CT">Connecticut</option>
+  	    <option value="DE">Delaware</option>
+  	    <option value="DC">District Of Columbia</option>
+  	    <option value="FL">Florida</option>
+  	    <option value="GA">Georgia</option>
+  	    <option value="HI">Hawaii</option>
+  	    <option value="ID">Idaho</option>
+  	    <option value="IL">Illinois</option>
+  	    <option value="IN">Indiana</option>
+  	    <option value="IA">Iowa</option>
+  	    <option value="KS">Kansas</option>
+  	    <option value="KY">Kentucky</option>
+  	    <option value="LA">Louisiana</option>
+  	    <option value="ME">Maine</option>
+  	    <option value="MD">Maryland</option>
+  	    <option value="MA">Massachusetts</option>
+  	    <option value="MI">Michigan</option>
+  	    <option value="MN">Minnesota</option>
+  	    <option value="MS">Mississippi</option>
+  	    <option value="MO">Missouri</option>
+  	    <option value="MT">Montana</option>
+  	    <option value="NE">Nebraska</option>
+  	    <option value="NV">Nevada</option>
+  	    <option value="NH">New Hampshire</option>
+  	    <option value="NJ">New Jersey</option>
+  	    <option value="NM">New Mexico</option>
+  	    <option value="NY">New York</option>
+  	    <option value="NC">North Carolina</option>
+  	    <option value="ND">North Dakota</option>
+  	    <option value="OH">Ohio</option>
+  	    <option value="OK">Oklahoma</option>
+  	    <option value="OR">Oregon</option>
+  	    <option value="PA">Pennsylvania</option>
+  	    <option value="RI">Rhode Island</option>
+  	    <option value="SC">South Carolina</option>
+  	    <option value="SD">South Dakota</option>
+  	    <option value="TN">Tennessee</option>
+  	    <option value="TX">Texas</option>
+  	    <option value="UT">Utah</option>
+  	    <option value="VT">Vermont</option>
+  	    <option value="VA">Virginia</option>
+  	    <option value="WA">Washington</option>
+  	    <option value="WV">West Virginia</option>
+  	    <option value="WI">Wisconsin</option>
+  	    <option value="WY">Wyoming</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:zip, 'Zip:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :zip, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+    </div>
+    <h1 class="block w-full text-center text-grey-darkest mb-6">End Insured Information</h1>
+  </div>
+</div>
+
+<div class="flex items-center  w-full bg-teal-lighter">
+  <div class="w-full bg-white rounded shadow-lg p-8 m-4">
+    <h1 class="block w-full text-center text-grey-darkest mb-6">Start General Liability Classes</h1>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:loc, 'Location #:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="loc" name="loc" onchange="showDiv('loc1Div', this)" class="border py-2 px-3 text-grey-darkest">
+        <option><--SELECT LOCATION--></option>
+        <option value="1">Location 1</option>
+        <option value="2">Location 2</option>
+      </select>
+
+  <script>
+    function showDiv(divId, element)
+    {
+        document.getElementById(divId).style.display = element.value == 1 ? 'block' : 'none';
+    }
+    // Come back and do the rest of the address for each location! //
+  </script>
+
+  <div id="loc1Div" style="display: none">
+    <h1> Location 1 Address: </h1>
+
+    <%= label_tag(:building_number, 'Building Number:') %>
+    <select id="building_number" name="building_number">
+      <option value="1">Building 1</option>
+      <option value="2">Building 2</option>
+    </select>
+
+    <%= label_tag(:premises_number, 'Premises Number:') %>
+    <%= text_field_tag :premises_number, required: true %>
+
+    <%= label_tag(:loc1_adr, 'Address:') %>
+    <%= text_field_tag :loc1_adr, required: true %>
+
+    <%= label_tag(:loc1_adr1, 'Address 2:') %>
+    <%= text_field_tag :loc1_adr1, required: true %>
+
+    <%= label_tag(:loc1_city, 'City:') %>
+    <%= text_field_tag :loc1_city, required: true %>
+
+    <%= label_tag(:loc1_state, 'State:') %>
+    <%= text_field_tag :loc1_state, required: true %>
+
+    <%= label_tag(:loc1_zip, 'Zip:') %>
+    <%= text_field_tag :loc1_zip, required: true %>
+
+    <%= label_tag(:loc1_county, 'County:') %>
+    <%= text_field_tag :loc1_county %>
+
+    <%= label_tag(:loc1_territory, 'Territory:') %>
+    <%= text_field_tag :loc1_territory %>
+  </div>
+  </div>
+  <div class="flex flex-col md-4">
+    <%= label_tag(:description_operations, 'Description of Operations:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+    <%= text_field_tag :description_operations, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+  </div>
+  <div class="flex flex-col md-4">
+    <%= label_tag(:business_entity, 'Business Entity:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+    <select id="business_entity" name="business_entity" class="border py-2 px-3 text-grey-darkest" required="true">
+      <option value="Corporation">Corporation</option>
+      <option value="Individual">Individual</option>
+      <option value="Partnership">Partnership</option>
+    </select>
+  </div>
+  <div class="flex flex-col md-4">
+    <%= label_tag(:premium_base, 'Premium Base:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+  <select id="premium_base" name="premium_base" class="border py-2 px-3 text-grey-darkest">
+    <option value="Gross Sales">Gross Sales</option>
+    <option value="Payroll">Payroll</option>
+    <option value="Area">Area</option>
+    <option value="Units">Units</option>
+    <option value="Flat">Flat</option>
+    <option value="Admissions">Admissions</option>
+    <option value="Admissions Per Day">Admissions Per Day</option>
+    <option value="Cost Within 50 ft of Railroad">Cost Within 50 ft of Railroad</option>
+    <option value="Each Acre">Each Acre</option>
+    <option value="Each Activity Day">Each Activity Day</option>
+    <option value="Each Airport">Each Airport</option>
+    <option value="Each Animal">Each Animal</option>
+    <option value="Each Attendant">Each Attendant</option>
+    <option value="Each Beach">Each Beach</option>
+    <option value="Each Bed">Each Bed</option>
+    <option value="Each Boat">Each Boat</option>
+    <option value="Each Bridge">Each Bridge</option>
+    <option value="Each Campaign Headquaters or Office">Each Campaign Headquaters or Office</option>
+    <option value="Each Camper Day">Each Camper Day</option>
+    <option value="Each Cart">Each Cart</option>
+    <option value="Each Catering Unit">Each Catering Unit</option>
+    <option value="Each Chair">Each Chair</option>
+    <option value="Each Child">Each Child</option>
+    <option value="Each Clubhouse">Each Clubhouse</option>
+    <option value="Each Contestant">Each Contestant</option>
+    <option value="Each Convention Day">Each Convention Day</option>
+    <option value="Each Dam, Levee or Dike">Each Dam, Levee or Dike</option>
+    <option value="Each Dock or Slip">Each Dock or Slip</option>
+    <option value="Each Drawbridge">Each Drawbridge</option>
+    <option value="Each Dwelling">Each Dwelling</option>
+    <option value="Each Event">Each Event</option>
+    <option value="Each Exercise Room">Each Exercise Room</option>
+    <option value="Each Exhibition">Each Exhibition</option>
+    <option value="Each Faculty Member">Each Faculty Member</option>
+    <option value="Each Fairground">Each Fairground</option>
+    <option value="Each Game">Each Game</option>
+    <option value="Each Grandstand or Bleacher">Each Grandstand or Bleacher</option>
+    <option value="Each Hand Truck or Garment Rack">Each Hand Truck or Gament Rack</option>
+    <option value="Each Home">Each Home</option>
+    <option value="Each Hot Tub, Spa or Sauna">Each Hot Tub, Spa or Sauna</option>
+    <option value="Each Hydro-massage Unit">Each Hydro-massage Unit</option>
+    <option value="Each Kennel">Each Kennel</option>
+    <option value="Each Lake or Reservoir">Each Lake or Reservoir</option>
+    <option value="Each Lessee">Each Lessee</option>
+    <option value="Each Location">Each Location</option>
+    <option value="Each Lot or Kiosk">Each Lot or Kiosk</option>
+    <option value="Each Masseur(euse)">Each Massuer(euse)</option>
+    <option value="Each Member">Each Member</option>
+    <option value="Each Mile">Each Mile</option>
+    <option value="Each Nail Technician">Each Nail Technician</option>
+    <option value="Each Office">Each Office</option>
+    <option value="Each Operator">Each Operator</option>
+    <option value="Each Parade">Each Parade</option>
+    <option value="Each Park or Playground">Each Park or Playground</option>
+    <option value="Each Picnic Ground">Each Picnic Ground</option>
+    <option value="Each Pier">Each Pier</option>
+    <option value="Each Pool">Each Pool</option>
+    <option value="Each Range">Each Range</option>
+    <option value="Each Registrant">Each Registrant</option>
+    <option value="Each Scout">Each Scout</option>
+    <option value="Each Solar Energy System">Each Solar Energy System</option>
+    <option value="Each Sports Field or Court">Each Sports Field or Court</option>
+    <option value="Each Station or Terminal">Each Station or Terminal</option>
+    <option value="Each Tanning Bed">Each Tanning Bed</option>
+    <option value="Each Team">Each Team</option>
+    <option value="Each Tower">Each Tower</option>
+    <option value="Each Turbine">Each Turbine</option>
+    <option value="Each Vehicle">Each Vehicle</option>
+    <option value="Each Visit">Each Visit</option>
+    <option value="Each Zoo">Each Zoo</option>
+    <option value="No Exposure">No Exposure</option>
+    <option value="Per 1,000 Bales">Per 1,000 Bales</option>
+    <option value="Per 1,000 Gallons">Per 1,000 Gallons</option>
+    <option value="Per 1,000 Passenger Days">Per 1,000 Passenger Days</option>
+    <option value="Per 1,000 Tons">Per 1,000 Tons</option>
+    <option value="Per 1,000 Vehicles">Per 1,000 Vehicles</option>
+    <option value="Per 100 Visits">Per 100 Visits</option>
+    <option value="Per Gallon">Per Gallon</option>
+    <option value="Per Location/Per Day">Per Location/Per Day</option>
+    <option value="Per Person">Per Person</option>
+    <option value="Per Room">Per Room</option>
+    <option value="Per Show">Per Show</option>
+    <option value="Per Site">Per Site</option>
+    <option value="Per Space">Per Space</option>
+    <option value="Per Stand">Per Stand</option>
+    <option value="Per Student">Per Student</option>
+    <option value="Total Cost">Total Cost</option>
+    <option value="Total Operating Expenses">Total Operating Expenses</option>
+  </select>
+  </div>
+  <div class="flex flex-col md-4">
+    <%= label_tag(:premium_base_divisor, 'Premium Base Divisor:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+    <%= text_field_tag :premium_base_divisor, '1000', class: 'border py-2 px-3 text-grey-darkest' %>
+  </div>
+  <div class="flex flex-col md-4">
+    <%= label_tag(:exposure, 'Exposure:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+    $<%= text_field_tag :exposure, '', class: 'border py-2 px-3 text-grey-darkest', required: true %>
+  </div>
+
+  <p class="frm_txt">Include<%= check_box_tag :include, '', class: 'border py-2 px-3 text-grey-darkest' %> If Any<%= check_box_tag :if_any, '', class: 'border py-2 px-3 text-grey-darkest' %></p>
+
+  <h1 class="block w-full text-center text-grey-darkest mb-6">End General Libability Classes</h1>
+  </div>
+</div>
+
+<div class="flex items-center  w-full bg-teal-lighter">
+  <div class="w-full bg-white rounded shadow-lg p-8 m-4">
+    <h1 class="block w-full text-center text-grey-darkest mb-6">Start Eligibility</h1>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:meets_guidelines, 'Does the applicant meet eligibility guidelines, including loss and claim parameters?', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <p class="frm_txt">Yes:<input type="radio" id="guidelines_yes" name="meets_guidelines" value="yes" checked> No:<input type="radio" id="guidelines_no" name="meets_guidelines" value="no"></p>
+    </div>
+    <h1 class="block w-full text-center text-grey-darkest mb-6">End Eligibility</h1>
+  </div>
+</div>
+
+
+
+
+<div class="flex items-center w-full bg-teal-lighter">
+  <div class="w-full bg-white rounded shadow-lg p-8 m-4">
+    <h1 class="block w-full text-center text-grey-darkest mb-6">Start Warranties Information</h1>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:warranty_value, 'Warranty Value:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :warranty_value, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <h1 class="block w-full text-center text-grey-darkest mb-6">End Warranties Information</h1>
+  </div>
+</div>
+
+<div class="flex items-center  w-full bg-teal-lighter">
+  <div class="w-full bg-white rounded shadow-lg p-8 m-4">
+    <h1 class="block w-full text-center text-grey-darkest mb-6">Start Aditional Coverages</h1>
+    <div class="flex flex-col mb-4">
+      <a onclick="AdditionalInsuredsClick()" class="frm_btn">Additional Insureds</a>
+      <a onclick="WaiverofSubrogationClick()" class="frm_btn">Waiver of Subrogation</a>
+      <a onclick="EmployeeBenefitsLiabilityClick()" class="frm_btn">Employee Benefits Liability</a>
+      <a onclick="TerrorismCoverageClick()" class="frm_btn">Terrorism Coverage</a>
+    </div>
+    <div class="flex flex-col mb-4">
+      <div id="AdditionalInsuresDiv" style="display: none">
+        <table border="2px" align="center">
+          <tr>
+            <th>
+              Description:
+            </th>
+            <th>
+              Rating Basis:
+            </th>
+            <th>
+              Add:
+            </th>
+            <th>
+              QTY:
+            </th>
+          </tr>
+          <tr>
+            <td>
+              Additional Insured Endorsement
+            </td>
+            <td>
+              $100 Each
+            </td>
+            <td>
+              <%= check_box_tag :add_aie %>
+            </td>
+            <td>
+              <%= number_field_tag :aie_count, '', style: 'width: 35px;' %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Blanket Additional Insured
+            </td>
+            <td>
+              10% of GL Premium Subject to a $500 Minimum Premium
+            </td>
+            <td>
+              <%= check_box_tag :add_blanket %>
+            </td>
+            <td>
+              <%= number_field_tag :blanket_count, '', style: 'width: 35px;' %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Additional Insured ~ Managers or Lessors of Premises
+            </td>
+            <td>
+              No Charge
+            </td>
+            <td>
+              <%= check_box_tag :add_managers %>
+            </td>
+            <td>
+              N/A
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Additional Insured ~ Mortgagee, Assignee, or Reciever
+            </td>
+            <td>
+              No Charge
+            </td>
+            <td>
+              <%= check_box_tag :add_mortgagee %>
+            </td>
+            <td>
+              N/A
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Additional Insured ~ Lessor of Leased Equipment
+            </td>
+            <td>
+              $100 Each
+            </td>
+            <td>
+              <%= check_box_tag :add_lessor %>
+            </td>
+            <td>
+              <%= number_field_tag :lessor_count, '', style: 'width: 35px;' %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Primary & Noncontributory ~ Other Insurance Condition
+            </td>
+            <td>
+              $100 Each
+            </td>
+            <td>
+              <%= check_box_tag :add_primary %>
+            </td>
+            <td>
+              <%= number_field_tag :primary_count, '', style: 'width: 35px;' %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Primary & Noncontributory ~ Other Insurance Condition (Blanket)
+            </td>
+            <td>
+              $250 Charge
+            </td>
+            <td>
+              <%= check_box_tag :add_primary_blanket %>
+            </td>
+            <td>
+              N/A
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="WaiverofSubrogationDiv" style="display: none">
+        <table border="2px" align="center">
+          <tr>
+            <th>
+              Description:
+            </th>
+            <th>
+              Rating Basis:
+            </th>
+            <th>
+              Add:
+            </th>
+            <th>
+              QTY:
+            </th>
+          </tr>
+          <tr>
+            <td>
+              Waiver of Subrogation
+            </td>
+            <td>
+              $100 Each
+            </td>
+            <td>
+              <%= check_box_tag :waiver_of_subrogation %>
+            </td>
+            <td>
+              <%= number_field_tag :subrogation_count, '', style: 'width: 35px' %>
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Blanket Waiver of Subrogation
+            </td>
+            <td>
+              5% of GL Premium Subject To A $250 Minimum Premium
+            </td>
+            <td>
+              <%= check_box_tag :waiver_of_subrogation_blanket %>
+            </td>
+            <td>
+              <%= number_field_tag :subrogation_blanket_count, '', style: 'width: 35px' %>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="EmployeeBenefitsLiabilityDiv" style="display: none">
+        <table border="2px" align="center">
+          <tr>
+            <th>
+              Description:
+            </th>
+            <th>
+              Rating Bases:
+            </th>
+            <th>
+              Add:
+            </th>
+            <th>
+              QTY:
+            </th>
+          </tr>
+          <tr>
+            <td>
+              Employee Benefits Liability
+            </td>
+            <td>
+              $150 Charge
+              <select id="rating_basis" name="rating_basis">
+                <option value="$50,000/$50,000">$50,000/$50,000</option>
+                <option value="$100,000/$100,000">$100,000/$100,000</option>
+                <option value="$300,000/$300,000">$300,000/$300,000</option>
+                <option value="$500,000/$500,000">$500,000/$500,000</option>
+                <option value="$1,000,000/$1,000,000">$1,000,000/$1,000,000</option>
+              </select>
+            </td>
+          </tr>
+        </table>
+      </div>
+
+      <div id="TerrorismCoverageDiv" style="display: none">
+        <table border="2px" align="center">
+          <tr>
+            <th>
+              Description:
+            </th>
+            <th>
+              Rating Basis:
+            </th>
+            <th>
+              Add:
+            </th>
+            <th>
+              QTY:
+            </th>
+          </tr>
+          <tr>
+            <td>
+              Cap on Losses From Terrorism
+            </td>
+            <td>
+              3% of GL Premium Subject To A $150 Minimum Premium
+            </td>
+            <td>
+              <%= check_box_tag :add_terrorism %>
+            </td>
+            <td>
+              N/A
+            </td>
+          </tr>
+        </table>
+      </div>
+    </div>
+    <h1 class="block w-full text-center text-grey-darkest mb-6">End Aditional Coverages</h1>
+  </div>
+</div>
+
+<div class="flex items-center  w-full bg-teal-lighter">
+  <div class="w-full bg-white rounded shadow-lg p-8 m-4">
+    <h1 class="block w-full text-center text-grey-darkest mb-6">Start Limits &amp; Deductibles</h1>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:per_occurrence_limit, 'Per Occurrence Limit:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+  <select id="per_occurrence_limit" name="per_occurrence_limit" class="border py-2 px-3 text-grey-darkest" required="true">
+    <option value="100,000 / 200,000">$100,000 / $200,000</option>
+    <option value="300,000 / 300,000">$300,000</option>
+    <option value="300,000 / 600,000">$300,000 / $600,000</option>
+    <option value="500,000 / 500,000">$500,000</option>
+    <option value="500,000 / 1,000,000">$500,000 / $1,000,000</option>
+    <option value="1,000,000 / 1,000,000">$1,000,000</option>
+    <option value="1,000,000 / 2,000,000">$1,000,000 / $2,000,000</option>
+    <option value="1,000,000 / 3,000,000">$1,000,000 / $3,000,000</option>
+    <option value="2,000,000 / 2,000,000">$2,000,000</option>
+    <option value="2,000,000 / 3,000,000">$2,000,000 / $3,000,000</option>
+    <option value="2,000,000 / 4,000,000">$2,000,000 / $4,000,000</option>
+  </select>
+  </div>
+  <div class="flex flex-col mb-4"
+  <%= label_tag(:personal_advertising_limit, 'Personal Advertising Limit:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+  <select id="personal_advertising_limit" name="personal_advertising_limit" class="border py-2 px-3 text-grey-darkest" required="true">
+    <option value="$100,000">$100,000</option>
+    <option value="$300,000">$300,000</option>
+    <option value="$500,000">$500,000</option>
+    <option value="$1,000,000">$1,000,000</option>
+    <option value="$2,000,000">$2,000,000</option>
+    <option value="Excluded">Excluded</option>
+    <option value="Excluded - Apply Credit">Excluded - Apply Credit</option>
+    <option value="$5,000,000">$5,000,000</option>
+    <option value="Excluded">Excluded</option>
+  </select>
+  </div>
+  <div class="flex flex-col mb-4">
+  <%= label_tag(:general_aggregate_limit, 'General Aggregate Limit:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+  <select id="general_aggregate_limit" name="general_aggregate_limit" class="border py-2 px-3 text-grey-darkest" required="true">
+    <option value="1000000/2000000">$1000000/$2000000</option>
+    <option value="$300,000">$300,000</option>
+    <option value="$500,000">$500,000</option>
+    <option value="$600,000">$600,000</option>
+    <option value="$1,000,000">$1,000,000</option>
+    <option value="$2,000,000">$2,000,000</option>
+    <option value="$3,000,000">$3,000,000</option>
+    <option value="$4,000,000">$4,000,000</option>
+    <option value="$5,000,000">$5,000,000</option>
+  </select>
+  </div>
+  <div class="flex flex-col mb-4">
+  <%= label_tag(:damage_to_rented_premises_limit, 'Damage To Rented Premises Limit:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+  <select id="damage_to_rented_premises_limit" name="damage_to_rented_premises_limit" class="border py-2 px-3 text-grey-darkest" required="true">
+    <option value="$100,000">$100,000</option>
+    <option value="$200,000">$200,000</option>
+    <option value="$300,000">$300,000</option>
+    <option value="Excluded">Excluded</option>
+    <option value="Excluded - Apply Credit">Excluded - Apply Credit</option>
+  </select>
+  </div>
+  <div class="flex flex-col mb-4">
+  <%= label_tag(:medical_expense_limit, 'Medical Expense Limit:', class: 'frm_txt') %>
+  <select id="medical_expense_limit" name="medical_expense_limit" class="border py-2 px-3 text-grey-darkest" required="true">
+    <option value="$5,000">$5,000</option>
+    <option value="$10,000">$10,000</option>
+    <option value="Excluded">Excluded</option>
+    <option value="$10,000">Excluded - Apply Credit</option>
+  </select>
+  </div>
+  <div class="flex flex-col mb-4">
+  <%= label_tag(:products_operations_aggregate_limit, 'Products/Completed Operations Aggregate Limit:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+  <select id="products_operations_aggregate_limit" name="products_operations_aggregate_limit" class="border py-2 px-3 text-grey-darkest" required="true">
+    <option value="$300,000">$300,000</option>
+    <option value="$500,000">$500,000</option>
+    <option value="$600,000">$600,000</option>
+    <option value="$1,000,000">$1,000,000</option>
+    <option value="$2,000,000">$2,000,000</option>
+    <option value="$3,000,000">$3,000,000</option>
+    <option value="$4,000,000">$4,000,000</option>
+    <option value="$5,000,000">$5,000,000</option>
+    <option value="Included">Included</option>
+    <option value="Excluded">Excluded</option>
+  </select>
+  </div>
+  <div class="flex flex-col mb-4">
+  <%= label_tag(:deductible, 'Deductible:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+  <select id="deductible" name="deductible" class="border py-2 px-3 text-grey-darkest" required="true">
+    <option value="0">$0</option>
+    <option value="500">$500</option>
+    <option value="1000">$1,000</option>
+    <option value="2500">$2,500</option>
+    <option value="5000">$5,000</option>
+  </select>
+  </div>
+  <div class="flex flex-col mb-4">
+  <%= label_tag(:deductible_basis, 'Deductible Basis:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+  <select id="deductible_basis" name="deductible_basis" class="border py-2 px-3 text-grey-darkest" required="true">
+    <option value="Per Claim">Per Claim</option>
+  </select>
+  </div>
+  <div class="flex flex-col mb-4">
+  <%= label_tag(:deductible_type, 'Deductible Type:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+  <select id="deductible_type" name="deductible_type" class="border py-2 px-3 text-grey-darkest" required="true">
+    <option value="Property Damage">Property Damage</option>
+  </select>
+  </div>
+  <div class="flex flex-col mb-4">
+  <%= label_tag(:general_liability_covered, 'General Liability Covered:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+  <select id="general_liability_covered" name="general_liability_covered" class="border py-2 px-3 text-grey-darkest" required="true">
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+  </select>
+  </div>
+  <h1 class="block w-full text-center text-grey-darkest mb-6">End Limits &amp; Deductibles</h1>
+</div>
+</div>
+
+<div class="flex items-center  w-full bg-teal-lighter">
+  <div class="w-full bg-white rounded shadow-lg p-8 m-4">
+    <h1 class="block w-full text-center text-grey-darkest mb-6">Start Rate Breakdown</h1>
+    <div class="flex flex-col mb-4">
+
+  <table border="2px" align="center">
+    <tr>
+      <td>
+        Approved Rate:<br/>
+        $0.6
+      </td>
+      <td>
+        Agent Adjusted Rate:<br/>
+        <%= text_field_tag :agent_adjusted_rate, '', class: 'border py-2 px-3 text-grey-darkest' %>
+      </td>
+      <td>
+        Final Rate:<br/>
+        $0.69
+      </td>
+    </tr>
+    <tr>
+      <td>
+        Approved Premium:<br/>
+        $1
+      </td>
+      <td>
+        Agent Premium Override:<br/>
+        <%= text_field_tag :agent_premium_override, '', class: 'border py-2 px-3 text-grey-darkest' %>
+      </td>
+      <td>
+        Final Premium:
+        $1 MP<%= check_box_tag :mp, '', class: 'border py-2 px-3 text-grey-darkest' %>
+      </td>
+    </tr>
+  </table>
+</div>
+<h1 class="block w-full text-center text-grey-darkest mb-6">End Rate Breakdown</h1>
+</div>
+</div>
+
+
+<div class="flex items-center  w-full bg-teal-lighter">
+  <div class="w-full bg-white rounded shadow-lg p-8 m-4">
+    <h1 class="block w-full text-center text-grey-darkest mb-6">Start Extra Fields Values</h1>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:mga_reference_number, 'MGA Reference Number:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :mga_reference_number, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:retail_agent_company, 'Retail Agency Company Name:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :retail_agent_company, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:retail_attention, '', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :retail_attention, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:retail_email, 'Retail Agents Email:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :retail_email, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:retail_fax, 'Retail Fax #:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :retail_fax, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:commssion, 'Commission:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :commission, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:override_commission, 'Override Commission Rate:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :override_commission, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:nj_broker_num, 'NJ Broker Number:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :nj_broker_num, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:sl_broker_name, 'SL Broker Full Name:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :sl_broker_name, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:override_defaults, 'Override Defaults:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="override_defaults" name="override_defaults" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:override_agency_license, 'Override Agency License:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkes') %>
+      <select id="override_agency_license" name="override_agency_license" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:mga_commission_rate, 'MGA Commission Rate:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :mga_commission_rate, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:is_verified, 'Is Verified:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="is_verified" name="is_verified" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:garrage_territory, 'Garage Territory:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :garrage_territory, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:wildfire_hazard, 'Wildfire Hazard:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :wildfire_hazard, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:violent_crime_score, 'Violant Crime Score:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :violent_crime_score, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:property_crime_score, 'Property Crime Score:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :property_crime_score, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:distance_to_coast, 'Distance to Coast:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :distance_to_coast, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:isanylobinfficlocation, 'Is Any LOB In FFIC Location:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="isanylobinfficlocation" name="isanylobinfficlocation" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:contractual_liability_limitation, 'Contractual Liability Limitation:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="contractual_liability_limitation" name="contractual_liability_limitation" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:written_contractual_limit, 'Written Contractual Limit:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="written_contractual_limit" name="written_contractual_limit" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:fully_earned, 'Fully Earned:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="fully_earned" name="fully_earned" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:is_minimum_premium, 'Is Minimum Premium:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="is_minimum_premium" name="is_minimum_premium" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:classification_id, 'Classification ID:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :classification_id, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:submit_rate, 'Submit Rate:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :submit_rate, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:submit_premium, 'Submit Premium:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :submit_premium, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:gl_class_override, 'GL Class Override:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :gl_class_override, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:gl_class_override_by, 'GL Class Override By:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :gl_class_override_by, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:line_minimum_premium_requirement, 'Line Minimum Premium Requirements:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :line_minimum_premium_requirement, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:total_insured_value, 'Total Insured Value:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :total_insured_value, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:coinsurance, 'Coinsurance:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :coinsurance, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+  </div>
+</div>
+
+
+  <div align="center">
+    <button type="submit" value="submit" class="bg-green-500 hover:bg-green-400 text-white font-bold py-2 px-4 border-b-4 border-green-700 hover:border-green-500 rounded content-center">Submit</button>
+  </div>
+<% end %>
+
+
+
+
+
+
+
+
+<script type="text/javascript">
+function AdditionalInsuredsClick()
+{
+var add = document.getElementById("AdditionalInsuresDiv");
+if (add.style.display === "none")
+{
+  add.style.display = "block";
+}
+else
+{
+  add.style.display = "none";
+}
+}
+
+function WaiverofSubrogationClick()
+{
+var waiver = document.getElementById("WaiverofSubrogationDiv");
+if (waiver.style.display === "none")
+{
+  waiver.style.display = "block";
+}
+else
+{
+  waiver.style.display = "none";
+}
+}
+
+function EmployeeBenefitsLiabilityClick()
+{
+var emp = document.getElementById("EmployeeBenefitsLiabilityDiv");
+if (emp.style.display === "none")
+{
+  emp.style.display = "block";
+}
+else
+{
+  emp.style.display = "none";
+}
+}
+
+function TerrorismCoverageClick()
+{
+var terr = document.getElementById("TerrorismCoverageDiv");
+if (terr.style.display === "none")
+{
+  terr.style.display = "block";
+}
+else
+{
+  terr.style.display = "none";
+}
+}
+</script>

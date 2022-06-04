@@ -1,0 +1,29 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  # For details on connection pooling, see Rails configuration guide
+  # https://guides.rubyonrails.org/configuring.html#database-pooling
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: b1tech
+  host: 131.150.67.139
+  username: postgres
+  password: C0d!NG20213190
+
+development:
+  <<: *default
+  database: B1Tech
+  # database: b1tech_development
+
+
+test:
+  <<: *default
+  database: B1Tech
+
+#
+production:
+  <<: *default
+  database: b1tech
+  host: 127.0.0.1
+  username: alpha
+  password: C0d!NG20213190

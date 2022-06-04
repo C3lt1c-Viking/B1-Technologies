@@ -1,0 +1,54 @@
+<% provide(:title, "Edit user") %>
+<div class="h-screen font-sans login bg-cover">
+<div class="container mx-auto h-full flex flex-1 justify-center items-center">
+    <div class="w-full max-w-lg">
+      <div class="leading-loose">
+        <%= form_with(model: @user, local: true, class: "max-w-sm m-4 p-10 bg-white bg-opacity-25 rounded shadow-xl") do |f| %>
+          <%= render 'shared/error_messages' %>
+          <p class="text-white font-medium text-center text-lg font-bold">UPDATE PROFILE</p>
+          <div class="gap-3">
+            <span class="w-1/2">
+              <%= f.label :name, class: "block  text-sm text-white" %>
+              <%= f.text_field :name, placeholder: "Full Name", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner' %>
+            </span>
+            <span class="w-1/2">
+              <%= f.label :agency, class: "block  text-sm text-white" %>
+              <%= f.text_field :agency, placeholder: "Agency", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', disabled: true %>
+            </span>
+            <span class="w-1/2">
+              <%= f.label :agency_code, class: 'block text-sm text-white' %>
+              <%= f.text_field :agency_code, placeholder: 'Agency Code', class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', disabled: true %>
+            </span>
+          </div>
+          <div class="gap-3">
+            <%= f.label :email, class: "block  text-sm text-white" %>
+            <%= f.email_field :email, class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', required: true, autocomplete: "email", placeholder: "Enter your email" %>
+          </div>
+          <div class="gap-3">
+            <%= f.label :password, class: "block  text-sm text-white" %>
+            <%= f.password_field :password, placeholder: "Enter Password", autocomplete: "new-password", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner' %>
+          </div>
+          <div class="gap-3">
+            <%= f.label :password_confirmation, "Confirmation", class: "block  text-sm text-white" %>
+            <%= f.password_field :password_confirmation, placeholder: "Re-Enter Password", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner' %>
+          </div>
+          <div class="gap-3">
+            <%= f.submit "Update Account", class: "w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none" %>
+          </div>
+        <% end %>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .login{
+  /*
+    background: url('https://tailwindadmin.netlify.app/dist/images/login-new.jpeg');
+  */
+  background: url('https://c4.wallpaperflare.com/wallpaper/467/696/839/blue-light-network-technology-wallpaper-thumb.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>

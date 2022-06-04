@@ -1,0 +1,197 @@
+{
+	"info": {
+		"_postman_id": "97e45d38-e512-4539-9f20-30636cfada77",
+		"name": "GROW - First Steps",
+		"description": "Simplified version for GL and Property to test connectivity and initial AmWins integration.",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Lookup",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "https://demoifg.ifgcompanies.com/ExternalUnderwriting/api/LookUpValues/GetLookUpValues",
+					"protocol": "https",
+					"host": [
+						"demoifg",
+						"ifgcompanies",
+						"com"
+					],
+					"path": [
+						"ExternalUnderwriting",
+						"api",
+						"LookUpValues",
+						"GetLookUpValues"
+					]
+				},
+				"description": "This call will allow you to gather all possible dropdown/option values"
+			},
+			"response": []
+		},
+		{
+			"name": "User Producer Information",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{ \r\n    \"WebUser\" : \"ifgapitestuser@ifgcompanies.com\", \r\n    \"Password\" : \"ifgapitestuser\" \r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demoifg.ifgcompanies.com/InternalUnderwriting/api/GetIUser",
+					"protocol": "https",
+					"host": [
+						"demoifg",
+						"ifgcompanies",
+						"com"
+					],
+					"path": [
+						"InternalUnderwriting",
+						"api",
+						"GetIUser"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Create Quote - General Liablity",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestType\": \"Indication\",\r\n  \"InsuredInformation\": {\r\n    \"Address1\": \"123 Sample Street\",\r\n    \"Address2\": \"Suite 300\",\r\n    \"City\": \"Sample City\",\r\n    \"State\": \"FL\",\r\n    \"ZipCode\": \"32960\",\r\n    \"BusinessDescription\": \"Sample business description\",\r\n    \"BusinessEntity\": \"Corporation\"\r\n  },\r\n  \"GeneralInformation\": {\r\n    \"InsuredName\": \"Sample Insured, Inc.\",\r\n    \"GoverningState\": \"FL\",\r\n    \"EffectiveDate\": \"2021-02-21T00:00:00\",\r\n    \"ExpriationDate\": \"2021-02-21T00:00:00\",\r\n    \"ProducerId\": \"7777\",\r\n    \"DoingBusinessAs\": \"The Sample Insured\"\r\n  },\r\n  \"AgencyInformation\": {\r\n    \"BrokerLicenseNumber\": \"broker\",\r\n    \"ContactName\": \"IFG Testing 1\",\r\n    \"Address1\": \"238 International Rd\",\r\n    \"Address2\": \"agencyadd2\",\r\n    \"City\": \"Burlington\",\r\n    \"State\": \"NC\",\r\n    \"ZipCode\": \"27215\",\r\n    \"EmailAddress\": \"person@sampleproducer.com\",\r\n    \"PhoneNumber\": \"336-555-4488\",\r\n    \"FaxNumber\": \"336-555-8030\",\r\n    \"AgencyLicenseNumber\": \"agencylic\",\r\n    \"MGAReferenceNumber\": \"mgaref\",\r\n    \"RetailAgent\": {\r\n      \"CompanyName\": \"Retail Agency Company Name\",\r\n      \"Attention\": \"retattention\",\r\n      \"EmailAddress\": \"retagent@retagent.com\",\r\n      \"FaxNumber\": \"954-473-8031\",\r\n      \"Commission\": \"200\"\r\n    },\r\n    \"OverrideCommissionRate\": 1.0,\r\n    \"NJBrokerLicenseNumber\": \"njlic\",\r\n    \"SLBrokerFullName\": null,\r\n    \"OverrideDefaults\": false,\r\n    \"OverrideAgencyLicense\": false,\r\n    \"MGACOMMISSIONRATE\": null\r\n  },\r\n  \"Locations\": [\r\n    {\r\n      \"LocationNumber\": 1,\r\n      \"BuildingNumber\": 1,\r\n      \"Address1\": \"123 Sample Rod.\",\r\n      \"Address2\": \"\",\r\n      \"City\": \"Vero Beach\",\r\n      \"State\": \"FL\",\r\n      \"ZipCode\": \"32960\",\r\n      \"County\": \"Indian River\",\r\n      \"IsVerified\": false,\r\n      \"GarageTerritory\": null,\r\n      \"WildfireHazard\": null,\r\n      \"ViolentCrimeScore\": null,\r\n      \"PropertyCrimeScore\": null,\r\n      \"AIRDistanceToCoast\": null,\r\n      \"IsAnyLOBInFFICLocation\": false\r\n    }\r\n  ],\r\n  \"GeneralLiabilityHeader\": {\r\n    \"EachOccurrenceGeneralAggregate\": \"1000000/2000000\",\r\n    \"ProductsCompletedOpsAggregate\": \"$2,000,000\",\r\n    \"PersonalAndAdvertisingInjury\": \"$1,000,000\",\r\n    \"DamageToPremisesRentedToYou\": \"$100,000\",\r\n    \"MedicalExpense\": \"$5,000\",\r\n    \"ContractualLiabilityLimitation\": \"No\",\r\n    \"DeductibleBasis\": \"Per Claim\",\r\n    \"DeductibleAmount\": \"500\",\r\n    \"DeductibleType\": \"Property Damage\",\r\n    \"MinimumPremiumOverride\": 699.25,\r\n    \"WrittenContract1mil3mil\": false\r\n  },\r\n  \"GeneralLiabilityClasses\": [\r\n    {\r\n      \"LocationNumber\": 1,\r\n      \"BuildingNumber\": 1,\r\n      \"ClassCode\": \"16920\",\r\n      \"Exposure\": 145000,\r\n      \"IfAny\": false,\r\n      \"FullyEarned\": false,\r\n      \"IsMinimumPremium\": false,\r\n      \"ClassificationId\": null,\r\n      \"SubmitRate\": null,\r\n      \"SubmitPremium\": null,\r\n      \"GLClassOverride\": 3500,\r\n      \"GLClassOverrideBy\": 26909\r\n    }\r\n  ],\r\n  \"TriaInformation\": {\r\n    \"GeneralLiabilityCovered\": null\r\n  },\r\n  \"UserName\" : \"ifgapitestuser@ifgcompanies.com\", \r\n  \"Password\" : \"ifgapitestuser\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demoifg.ifgcompanies.com/BurlingtonWebAPI/api/Policy/SaveGetPolicy",
+					"protocol": "https",
+					"host": [
+						"demoifg",
+						"ifgcompanies",
+						"com"
+					],
+					"path": [
+						"BurlingtonWebAPI",
+						"api",
+						"Policy",
+						"SaveGetPolicy"
+					]
+				},
+				"description": "This message describes a very simple General Liability quote. This message is intended to receive a premium indication / pricing."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Quote - General Liability",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Token\": \"7B71526C807CA86B5073858281\",\r\n  \"UserName\" : \"ifgapitestuser@ifgcompanies.com\", \r\n  \"Password\" : \"ifgapitestuser\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demoifg.ifgcompanies.com/BurlingtonWebAPI/api/Policy/GetPolicy",
+					"protocol": "https",
+					"host": [
+						"demoifg",
+						"ifgcompanies",
+						"com"
+					],
+					"path": [
+						"BurlingtonWebAPI",
+						"api",
+						"Policy",
+						"GetPolicy"
+					]
+				},
+				"description": "This call will allow you to obtain the details of the policy you completed on the prior step. To do so, review the section for RatingResponse which provides both summary and detailed information."
+			},
+			"response": []
+		},
+		{
+			"name": "Create Quote - Property",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"RequestType\": \"Indication\",\r\n  \"InsuredInformation\": {\r\n    \"Address1\": \"123 Sample Street\",\r\n    \"Address2\": \"Suite 300\",\r\n    \"City\": \"Sample City\",\r\n    \"State\": \"FL\",\r\n    \"ZipCode\": \"32960\",\r\n    \"BusinessDescription\": \"Sample business description\",\r\n    \"BusinessEntity\": \"Corporation\"\r\n  },\r\n  \"GeneralInformation\": {\r\n    \"InsuredName\": \"Sample Insured, Inc.\",\r\n    \"GoverningState\": \"FL\",\r\n    \"EffectiveDate\": \"2021-02-21T00:00:00\",\r\n    \"ExpriationDate\": \"2021-02-21T00:00:00\",\r\n    \"ProducerId\": \"7777\"\r\n  },\r\n  \"AgencyInformation\": {\r\n    \"BrokerLicenseNumber\": \"broker\",\r\n    \"ContactName\": \"IFG Testing 1\",\r\n    \"Address1\": \"238 International Rd\",\r\n    \"Address2\": \"agencyadd2\",\r\n    \"City\": \"Burlington\",\r\n    \"State\": \"NC\",\r\n    \"ZipCode\": \"27215\",\r\n    \"EmailAddress\": \"person@sampleproducer.com\",\r\n    \"PhoneNumber\": \"336-555-4488\",\r\n    \"FaxNumber\": \"336-555-8030\",\r\n    \"AgencyLicenseNumber\": \"agencylic\",\r\n    \"MGAReferenceNumber\": \"mgaref\",\r\n    \"RetailAgent\": {\r\n      \"CompanyName\": \"retcompany\",\r\n      \"Attention\": \"retattention\",\r\n      \"EmailAddress\": \"retagent@retagent.com\",\r\n      \"FaxNumber\": \"954-473-8031\",\r\n      \"Commission\": \"200\"\r\n    },\r\n    \"OverrideCommissionRate\": 1.0,\r\n    \"NJBrokerLicenseNumber\": \"njlic\"\r\n  },\r\n  \"Locations\": [\r\n    {\r\n      \"LocationNumber\": 1,\r\n      \"BuildingNumber\": 1,\r\n      \"Address1\": \"123 Sample Rod.\",\r\n      \"Address2\": \"\",\r\n      \"City\": \"Vero Beach\",\r\n      \"State\": \"FL\",\r\n      \"ZipCode\": \"32960\",\r\n      \"County\": \"Indian River\",\r\n      \"IsVerified\": false,\r\n      \"GarageTerritory\": null,\r\n      \"WildfireHazard\": null,\r\n      \"ViolentCrimeScore\": null,\r\n      \"PropertyCrimeScore\": null,\r\n      \"AIRDistanceToCoast\": null,\r\n      \"IsAnyLOBInFFICLocation\": false\r\n    }\r\n  ],\r\n  \"PropertyHeader\": { \"MinimumPremiumOverride\": 400.25 },\r\n  \"PropertyClasses\": [\r\n    {\r\n      \"LocationNumber\": 1,\r\n      \"BuildingNumber\": 1,\r\n      \"ClassCode\": \"0702-10\",\r\n      \"CausesOfLossForm\": \"Basic Form\",\r\n      \"PropertyProtectionClass\": \"3\",\r\n      \"ConstructionType\": \"Frame\",\r\n      \"TheftDeductible\": \"None\",\r\n      \"WindHailDeductible\": \"None\",\r\n      \"AOPDeductible\": \"1,000\",\r\n      \"AutomaticSprinkler\": true,\r\n      \"CentralStationFireAlarm\": true,\r\n      \"FireCombustionAlarm\": true,\r\n      \"ServiceContract\": true,\r\n      \"CommercialCooking\": true,\r\n      \"PNine\": true,\r\n      \"PnineDescription\": \"My sample safeguard\",\r\n      \"ProtSafeNone\": false,\r\n      \"WindAndHailExclusion\": true,\r\n      \"BuildingAge\": 11,\r\n      \"SquareFootage\": 2500,\r\n      \"NumberOfStories\": 1,\r\n      \"BusinessPersonalPropertyCoverage\": {\r\n        \"ValuationType\": \"ACV\",\r\n        \"Coinsurance\": \"80%\",\r\n        \"TotalInsuredValue\": \"125000\"\r\n      },\r\n      \"BusinessIncomeCoverage\": {\r\n        \"ValuationType\": null,\r\n        \"Coinsurance\": \"50%\",\r\n        \"TotalInsuredValue\": \"150000\"\r\n      },\r\n      \"BuildingValueCoverage\": {\r\n        \"ValuationType\": \"ACV\",\r\n        \"Coinsurance\": \"80%\",\r\n        \"TotalInsuredValue\": \"100000\"\r\n      },\r\n      \"YearBuilt\": 2008,\r\n      \"Occupancy\": \"testocc\",\r\n      \"ClassOverride\": 900,\r\n      \"ClassOverrideBy\": 26909,\r\n      \"BuildingUpdated\": false\r\n    }\r\n  ],\r\n  \"UserName\" : \"ifgapitestuser@ifgcompanies.com\", \r\n  \"Password\" : \"ifgapitestuser\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demoifg.ifgcompanies.com/BurlingtonWebAPI/api/Policy/SaveGetPolicy",
+					"protocol": "https",
+					"host": [
+						"demoifg",
+						"ifgcompanies",
+						"com"
+					],
+					"path": [
+						"BurlingtonWebAPI",
+						"api",
+						"Policy",
+						"SaveGetPolicy"
+					]
+				},
+				"description": "This message describes a very simple Property quote. This message is intended to receive a premium indication / pricing."
+			},
+			"response": []
+		},
+		{
+			"name": "Get Quote - Property",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"Token\": \"7B71526C807CA86B5073858281\",\r\n  \"UserName\" : \"ifgapitestuser@ifgcompanies.com\", \r\n  \"Password\" : \"ifgapitestuser\"\r\n}\r\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://demoifg.ifgcompanies.com/BurlingtonWebAPI/api/Policy/GetPolicy",
+					"protocol": "https",
+					"host": [
+						"demoifg",
+						"ifgcompanies",
+						"com"
+					],
+					"path": [
+						"BurlingtonWebAPI",
+						"api",
+						"Policy",
+						"GetPolicy"
+					]
+				},
+				"description": "This call will allow you to obtain the details of the policy you completed on the prior step. To do so, review the section for RatingResponse which provides both summary and detailed information."
+			},
+			"response": []
+		}
+	]
+}

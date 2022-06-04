@@ -1,0 +1,91 @@
+<% provide(:title, "Edit user") %>
+<div class=" font-sans login bg-cover">
+<div class="container mx-auto flex flex-1 justify-center items-center">
+    <div class="w-full max-w-lg">
+      <div class="leading-loose">
+        <%= form_with(model: @user, local: true, url: rails_settings_setting_user_path, class: "max-w-sm m-4 p-10 bg-white bg-opacity-25 rounded shadow-xl") do |f| %>
+          <%= render 'shared/error_messages' %>
+          <p class="text-white font-medium text-center text-lg font-bold">Agency information</p>
+          <div class="gap-3">
+            <span class="w-1/2">
+              <%= f.label :producer_id, class: "block  text-sm text-white" %>
+              <%= f.text_field :producer_id, placeholder: "Producer ID", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).producer_id %>
+            </span>
+            <span class="w-1/2">
+              <%= f.label :producer_agency, class: "block  text-sm text-white" %>
+              <%= f.text_field :producer_agency, placeholder: "Producer Agency", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).producer_agency  %>
+            </span>
+            <span class="w-1/2">
+              <%= f.label :producer_name, class: 'block text-sm text-white' %>
+              <%= f.text_field :producer_name, placeholder: 'Producer name', class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).producer_name  %>
+            </span>
+          </div>
+          <div class="gap-3">
+            <%= f.label :on_behalf_of, class: "block  text-sm text-white" %>
+            <%= f.text_field :on_behalf_of, placeholder: "On behalf of", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).on_behalf_of  %>
+          </div>
+          <div class="gap-3">
+            <%= f.label :producer_email, class: "block  text-sm text-white" %>
+            <%= f.text_field :producer_email, placeholder: "Enter producer email", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).producer_email %>
+          </div>
+          <div class="gap-3">
+            <%= f.label :on_behalf_of_email, class: "block  text-sm text-white" %>
+            <%= f.email_field :on_behalf_of_email, placeholder: "Enter behalf of email", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).on_behalf_of_email  %>
+          </div>
+          <div class="gap-3">
+            <%= f.label :agency_license_number, class: "block  text-sm text-white" %>
+            <%= f.text_field :agency_license_number, placeholder: "Enter agency license number", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).agency_license_number  %>
+          </div>
+          <div class="gap-3">
+            <%= f.label :broker_license_number, class: "block  text-sm text-white" %>
+            <%= f.text_field :broker_license_number, placeholder: "Enter broker license number", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).broker_license_number  %>
+          </div>
+          <div class="gap-3">
+            <%= f.label :agency_address, class: "block  text-sm text-white" %>
+            <%= f.text_field :agency_address, placeholder: "Enter address", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).agency_address  %>
+          </div>
+          <div class="gap-3">
+            <%= f.label :agency_address_2, class: "block  text-sm text-white" %>
+            <%= f.text_field :agency_address_2, placeholder: "Enter address 2", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).agency_address2  %>
+          </div>
+          <div class="gap-3">
+            <%= f.label :agency_city, class: "block  text-sm text-white" %>
+            <%= f.text_field :agency_city, placeholder: "Enter city", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).agency_city  %>
+          </div>
+          <div class="gap-3">
+            <%= f.label :agency_state, class: "block  text-sm text-white" %>
+            <%= f.text_field :agency_state, placeholder: "Enter Password", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).producer_id  %>
+          </div>
+
+          <div class="gap-3">
+            <%= f.label :agency_zip_code, class: "block  text-sm text-white" %>
+            <%= f.text_field :agency_zip_code, placeholder: "Enter zip code", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).agency_zip_code  %>
+          </div>
+          <div class="gap-3">
+            <%= f.label :agency_phone_number, class: "block  text-sm text-white" %>
+            <%= f.text_field :agency_phone_number, placeholder: "Enter Phone Number", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).agency_phone_numberd  %>
+          </div>
+          <div class="gap-3">
+            <%= f.label :agency_fax_number, class: "block  text-sm text-white" %>
+            <%= f.text_field :agency_fax_number, placeholder: "Enter Fax Number", class: 'block w-full p-3 mt-2 text-gray-700 bg-gray-200 appearance-none focus:outline-none focus:bg-gray-300 focus:shadow-inner', value: current_user.settings(:agency_information).agency_fax_number  %>
+          </div>
+          <div class="gap-3">
+            <%= f.submit "Update Agency Details", class: "w-full py-3 mt-6 font-medium tracking-widest text-white uppercase bg-black shadow-lg focus:outline-none hover:bg-gray-900 hover:shadow-none" %>
+          </div>
+        <% end %>
+
+
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .login{
+  /*
+    background: url('https://tailwindadmin.netlify.app/dist/images/login-new.jpeg');
+  */
+  background: url('https://c4.wallpaperflare.com/wallpaper/467/696/839/blue-light-network-technology-wallpaper-thumb.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>

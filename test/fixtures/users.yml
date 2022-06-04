@@ -1,0 +1,14 @@
+brent:
+  agency:          Texas Specialty Underwriters
+  agency_code:     0295
+  name:            Brent Davis
+  email:           brentd@texasspecialty.com
+  password_digest: <%= User.digest('password') %>
+  admin:           true
+
+aubrey:
+  agency:          B1 Technologies
+  agency_code:     404
+  name:            Dr. Aubrey W. Love II
+  email:           cryp70@tuta.io
+  password_digest: <%= User.digest('password') %>

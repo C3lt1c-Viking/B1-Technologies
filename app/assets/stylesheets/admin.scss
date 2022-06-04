@@ -1,0 +1,45 @@
+/*
+
+      Import Google Fonts:
+
+      font-family: 'Audiowide', cursive;
+
+      font-family: 'Black Ops One', cursive;
+
+      font-family: 'Cinzel', serif;
+
+      font-family: 'Crimson Text', serif;
+
+      font-family: 'IBM Plex Serif', serif;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-family: 'Quantico', sans-serif;
+
+      font-family: 'Righteous', cursive;
+
+      font-family: 'Source Code Pro', monospace;
+
+*/
+.admin_mnu
+{
+  font-family: 'Black Ops One', cursive;
+}
+.admin_mnu:hover
+{
+  font-family: 'Cinzel', serif;
+  text-shadow: 3px 3px 5px #000;
+}
+.del_usr
+{
+  color: #F00;
+  font-family: 'Black Ops One', cursive;
+  text-decoration: overline;
+  text-transform: uppercase;
+}
+
+.all_user_text
+{
+  color: #00F;
+  font-family: 'Orbitron', sans-serif;
+}

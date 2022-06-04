@@ -1,0 +1,29 @@
+<%= form_with(model: business_info) do |form| %>
+  <% if business_info.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(business_info.errors.count, "error") %> prohibited this business_info from being saved:</h2>
+
+      <ul>
+        <% business_info.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field" align="center">
+    <%= form.label :business_type %><br/>
+    <%= form.text_field :business_type, style: 'border: 3px solid #000;; padding: 5px;' %>
+  </div>
+  <br/>
+
+  <div class="field" align="center">
+    <%= form.label :class_code %><br/>
+    <%= form.text_field :class_code, style: 'border: 3px solid #000; padding: 5px;' %>
+  </div>
+<br/>
+<br/>
+  <div class="actions" align="center">
+    <%= form.submit style: 'border: 3px solid #000; padding: 5px;' %>
+  </div>
+<% end %>

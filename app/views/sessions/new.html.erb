@@ -1,0 +1,45 @@
+<% provide(:title, 'Log In') %>
+
+
+<div class="h-screen font-sans login bg-cover">
+<div class="container mx-auto h-full flex flex-1 justify-center items-center">
+    <div class="w-full max-w-lg">
+      <div class="leading-loose">
+        <%= form_with(url: login_path, scope: :session, local: true, class: "max-w-sm m-4 p-10 bg-white bg-opacity-25 rounded shadow-xl") do |f| %>
+          <p class="text-white font-medium text-center text-lg font-bold">LOGIN</p>
+          <div class="">
+            <%= f.label :email, class: "block text-sm text-white" %>
+            <%= f.email_field :email, class: 'w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white', placeholder: "Enter your email" %>
+          </div>
+
+          <div class="mt-2">
+            <%= f.label :password, class: "block  text-sm text-white" %>
+            <%= f.password_field :password, class: 'w-full px-5 py-1 text-gray-700 bg-gray-300 rounded focus:outline-none focus:bg-white', placeholder: "Enter your password"  %>
+          </div>
+
+          <%= f.label :remember_me, class: "checkbox inline" do %>
+            <%= f.check_box :remember_me %>
+            <span>Remember me on this computer</span>
+          <% end %>
+
+          <div class="mt-4 items-center flex justify-between">
+            <%= f.submit "Log in", class: "btn btn-primary", class: "px-4 py-1 text-white font-light tracking-wider bg-gray-900 hover:bg-gray-800 rounded" %>
+
+          </div>
+
+
+
+
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>
+<style>
+  .login{
+  background: url('https://i.pinimg.com/originals/55/cb/38/55cb3807677b310faef5c66d67b8d1c7.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+</style>

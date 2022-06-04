@@ -1,0 +1,255 @@
+<div class="flex items-center w-full bg-teal-lighter">
+  <div class="w-full bg-white rounded shadow-lg p-8 m-4">
+    <h1 class="block w-full text-center text-grey-darkest mb-6">Start Building Information</h1>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:construction_type, 'Construction Type:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :construction_type, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:protection_class, 'Protection Class:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :protection_class, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:year_built, 'Year Built:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :year_built, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:total_area, 'Total Area:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :total_area, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:price_per_square_foot, 'Price Per Square Foot:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :price_per_square_foot, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:recent_building_updates, 'Recent Building Updates:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :recent_building_updates, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:recent_roof_replacement, 'Recent Roof Replacement:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :recent_roof_replacement, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:roof_uninsurable, 'Roof Uninsurable:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :roof_uninsurable, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:sprinkler_system, 'Sprinkler System:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :sprinkler_system, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:central_burglar_alarm, 'Central Burglar Alarm:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :central_burglar_alarm, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:central_fire_alarm, 'Central Fire Alarm:', class: 'mb-2 uppercase font-bold text-lg text-grey-darekst') %>
+      <%= text_field_tag :central_fire_alarm, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:number_stories, 'Number of Stories:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :number_stories, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:causes_of_loss, 'Causes of Loss:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :causes_of_loss, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:wind_hail, 'Wind Hail:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :wind_hail, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:wind_hail_deductible, 'Wind Hail Deductible:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :wind_hail_deductible, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:exclude_vandalism, 'Exclude Vandalism:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :exclude_vandalism, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:vandalism_sub_limit, 'Vandalism Sub Limit:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :vandalism_sub_limit, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:theft_sub_limit, 'Theft Sub Limit:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :theft_sub_limit, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:theft_deductible, 'Theft Deductible:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :theft_deductible, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:aop_deductible, 'AOP Deductible:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :aop_deductible, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:glass_deductible, 'Glass Deductible:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :glass_deductible, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <h1 class="block w-full text-center text-grey-darkest mb-6">End Building Information</h1>
+  </div>
+</div>
+
+
+
+
+<div class="flex items-center  w-full bg-teal-lighter">
+  <div class="w-full bg-white rounded shadow-lg p-8 m-4">
+    <h1 class="block w-full text-center text-grey-darkest mb-6">Start Extra Fields Values</h1>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:mga_reference_number, 'MGA Reference Number:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :mga_reference_number, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:retail_agent_company, 'Retail Agency Company Name:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :retail_agent_company, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:retail_attention, '', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :retail_attention, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:retail_email, 'Retail Agents Email:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :retail_email, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:retail_fax, 'Retail Fax #:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :retail_fax, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:commssion, 'Commission:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :commission, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:override_commission, 'Override Commission Rate:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :override_commission, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:nj_broker_num, 'NJ Broker Number:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :nj_broker_num, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:sl_broker_name, 'SL Broker Full Name:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :sl_broker_name, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:override_defaults, 'Override Defaults:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="override_defaults" name="override_defaults" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:override_agency_license, 'Override Agency License:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkes') %>
+      <select id="override_agency_license" name="override_agency_license" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:mga_commission_rate, 'MGA Commission Rate:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :mga_commission_rate, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:is_verified, 'Is Verified:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="is_verified" name="is_verified" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:garrage_territory, 'Garage Territory:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :garrage_territory, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:wildfire_hazard, 'Wildfire Hazard:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :wildfire_hazard, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:violent_crime_score, 'Violant Crime Score:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :violent_crime_score, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:property_crime_score, 'Property Crime Score:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :property_crime_score, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:distance_to_coast, 'Distance to Coast:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :distance_to_coast, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:isanylobinfficlocation, 'Is Any LOB In FFIC Location:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="isanylobinfficlocation" name="isanylobinfficlocation" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="true">Yes</option>
+        <option value="false">No</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:contractual_liability_limitation, 'Contractual Liability Limitation:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="contractual_liability_limitation" name="contractual_liability_limitation" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="Yes">Yes</option>
+        <option value="No">No</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:written_contractual_limit, 'Written Contractual Limit:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="written_contractual_limit" name="written_contractual_limit" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:fully_earned, 'Fully Earned:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="fully_earned" name="fully_earned" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:is_minimum_premium, 'Is Minimum Premium:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <select id="is_minimum_premium" name="is_minimum_premium" class="border py-2 px-3 text-grey-darkest">
+        <option><-- SELECT --></option>
+        <option value="true">True</option>
+        <option value="false">False</option>
+      </select>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:classification_id, 'Classification ID:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :classification_id, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:submit_rate, 'Submit Rate:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :submit_rate, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:submit_premium, 'Submit Premium:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :submit_premium, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:gl_class_override, 'GL Class Override:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :gl_class_override, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:gl_class_override_by, 'GL Class Override By:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :gl_class_override_by, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:line_minimum_premium_requirement, 'Line Minimum Premium Requirements:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :line_minimum_premium_requirement, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:total_insured_value, 'Total Insured Value:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :total_insured_value, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+    <div class="flex flex-col mb-4">
+      <%= label_tag(:coinsurance, 'Coinsurance:', class: 'mb-2 uppercase font-bold text-lg text-grey-darkest') %>
+      <%= text_field_tag :coinsurance, '', class: 'border py-2 px-3 text-grey-darkest' %>
+    </div>
+  </div>
+</div>

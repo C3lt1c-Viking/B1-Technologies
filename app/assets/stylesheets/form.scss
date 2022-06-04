@@ -1,0 +1,116 @@
+/*
+
+      Import Google Fonts:
+
+      font-family: 'Audiowide', cursive;
+
+      font-family: 'Black Ops One', cursive;
+
+      font-family: 'Cinzel', serif;
+
+      font-family: 'Crimson Text', serif;
+
+      font-family: 'IBM Plex Serif', serif;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-family: 'Quantico', sans-serif;
+
+      font-family: 'Righteous', cursive;
+
+      font-family: 'Source Code Pro', monospace;
+
+*/
+
+.form_holder
+{
+  width: 75%;
+  border: 3px solid #000;
+  box-shadow: 10px 10px 13px #000;
+  align: center;
+  margin: 15px auto;
+}
+
+.frm_sub_btn
+{
+  margin: 10px auto;
+  font-family: 'Orbitron', sans-serif;
+  font-size: 20px;
+  padding: 15px;
+  border: #000;
+  background-color: grey;
+  box-shadow: 5px 5px 7px #000;
+  align: center;
+  text-align: center;
+}
+
+.frm_sub_btn:hover
+{
+  margin: 10px auto;
+  font-family: 'Cinzel', serif;
+  font-size: 25px;
+  padding: 17px;
+  border: 3px double #0F0;
+  box-shadow: 14px 14px 18px #000;
+  align: center;
+  margin: 15px auto;
+  cursor: crosshair;
+  background-color: #000;
+  color: #0F0;
+}
+
+.frm_btn
+{
+  padding: 10px;
+  font-family: 'Source Code Prod', monospace;
+  background-color: grey;
+  font-size: 10px;
+}
+.frm_btn:hover
+{
+  padding: 10px;
+  font-family: 'Cinzel', serif;
+  background-color: #000;
+  color: #0F0;
+  cursor: crosshair;
+}
+
+.frm_hdr
+{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  text-shadow: 5px 5px 10px #000;
+  text-decoration: overline;
+  margin-bottom: 7px;
+}
+
+.frm_end
+{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 25px;
+  text-align: center;
+  text-shadow: 5px 5px 10px #000;
+  text-decoration: underline;
+  margin-top: 7px;
+}
+
+.frm_txt
+{
+  font-family: 'Cinzel', sans-serif;
+  font-size: 20px;
+  color: #000;
+  text-shadow: 5px 5px 7px #000;
+  margin-left: 15px;
+}
+
+.frm_inp
+{
+  font-family: 'Source Code Pro', monospace;
+  font-size: 15px;
+  padding: 5px;
+  background-color: #000;
+  color: #0F0;
+  border: 3px solid #0F0;
+  box-shadow: 5px 5px 7px #000;
+}

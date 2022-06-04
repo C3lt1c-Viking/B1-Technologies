@@ -1,0 +1,11 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  submission_type: 1
+  data: 
+  user: one
+
+two:
+  submission_type: 1
+  data: 
+  user: two

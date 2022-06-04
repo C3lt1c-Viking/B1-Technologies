@@ -1,0 +1,178 @@
+<div>
+    <script src="https://cdn.jsdelivr.net/gh/alpinejs/alpine@v2.x.x/dist/alpine.min.js" defer></script>
+
+    <div x-data="{ sidebarOpen: false, darkMode: false }" :class="{ 'dark': darkMode }">
+        <div class="flex h-screen bg-gray-100 dark:bg-gray-800 font-roboto">
+            <div :class="sidebarOpen ? 'block' : 'hidden'" @click="sidebarOpen = false"
+                class="fixed z-20 inset-0 bg-black opacity-50 transition-opacity lg:hidden"></div>
+
+            <div :class="sidebarOpen ? 'translate-x-0 ease-out' : '-translate-x-full ease-in'"
+                class="fixed z-30 inset-y-0 left-0 w-60 transition duration-300 transform bg-white dark:bg-gray-900 overflow-y-auto lg:translate-x-0 lg:static lg:inset-0">
+                <div class="flex items-center justify-center mt-8">
+                    <div class="flex items-center">
+                        <span class="text-gray-800 dark:text-white text-2xl font-semibold">Your Portal</span>
+                    </div>
+                </div>
+
+                <nav class="flex flex-col mt-10 px-4 text-center">
+                    <a onclick="OverviewClick()"
+                        class="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800 rounded">About You</a>
+                    <a onclick="CompletedAppsClick()"
+                        class="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100  hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Completed Applications</a>
+                    <a onclick="NewAppsClick()"
+                        class="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">New Application</a>
+                    <a onclick="MyProfileClick()"
+                        class="mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded">Settings</a>
+                    <%= link_to "Edit Profile", edit_user_path(current_user), class: 'mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded' %>
+                    <% if current_user.admin? %>
+                      <%= link_to "Admin Panel", admin_path, class: 'mt-3 py-2 text-sm text-gray-600 dark:text-gray-400 hover:text-gray-700 dark:hover:text-gray-100 hover:bg-gray-200 dark:hover:bg-gray-800 rounded' %>
+                    <% end %>
+                </nav>
+            </div>
+
+            <div class="flex-1 flex flex-col overflow-hidden">
+                <header class="flex justify-between items-center p-6">
+                    <div class="flex items-center space-x-4 lg:space-x-0">
+                        <button @click="sidebarOpen = true"
+                            class="text-gray-500 dark:text-gray-300 focus:outline-none lg:hidden">
+                            <svg class="h-6 w-6" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M4 6H20M4 12H20M4 18H11" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </button>
+
+                        <div>
+                            <h1 class="text-2xl font-medium text-gray-800 dark:text-white">Your Agency: <%= current_user.agency %></h1>
+                        </div>
+                    </div>
+
+                    <div class="flex items-center space-x-4">
+
+                        <div x-data="{ dropdownOpen: false }" class="relative">
+                            <button @click="dropdownOpen = ! dropdownOpen"
+                                class="flex items-center space-x-2 relative focus:outline-none">
+                                <h2 class="text-gray-700 dark:text-gray-300 text-sm hidden sm:block"><%= @user.name %></h2>
+                                <img class="h-9 w-9 rounded-full border-2 border-purple-500 object-cover"
+                                    src="https://images.unsplash.com/photo-1553267751-1c148a7280a1?ixid=MXwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHw%3D&ixlib=rb-1.2.1&auto=format&fit=crop&w=634&q=80"
+                                    alt="Your avatar">
+                            </button>
+
+                            <div class="absolute right-0 mt-2 w-48 bg-white rounded-md overflow-hidden shadow-xl z-10"
+                                x-show="dropdownOpen" x-transition:enter="transition ease-out duration-100 transform"
+                                x-transition:enter-start="opacity-0 scale-95" x-transition:enter-end="opacity-100 scale-100"
+                                x-transition:leave="transition ease-in duration-75 transform"
+                                x-transition:leave-start="opacity-100 scale-100" x-transition:leave-end="opacity-0 scale-95"
+                                @click.away="dropdownOpen = false">
+                                <a onclick="OverviewClick()"
+                                    class="block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white">About You</a>
+                                <%= link_to 'Edit Profile', edit_user_path(current_user), class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white' %>
+                                <%= link_to 'New Application', new_submission_path, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white' %>
+                                <% if current_user.admin? %>
+                                  <%= link_to 'Admin Panel', admin_path, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white' %>
+                                <% end %>
+                                <%= link_to 'Logout', logout_path, class: 'block px-4 py-2 text-sm text-gray-700 hover:bg-purple-600 hover:text-white' %>
+                            </div>
+                        </div>
+                    </div>
+                </header>
+
+                <main class="flex-1 overflow-x-hidden overflow-y-auto">
+                    <div class="container mx-auto px-6 py-8">
+                        <div class="grid place-items-center h-96 text-gray-500 dark:text-gray-300 text-xl border-4 border-black-300 border-solid shadow-2xl">
+                            <div id="OverviewDiv" style="display: none">
+                              <h1 class="usr_info">
+                                <p class="usr_info">Your Name:&nbsp;<%= @user.name %></p>
+                                <p class="usr_info">Your Agency:&nbsp;<%= @user.agency %></p>
+                                <p class="usr_info">Your Agency Code:&nbsp;<%= @user.agency_code %></p>
+                                <p class="usr_info">Your Email:&nbsp;<%= @user.email %></p>
+                        </div>
+                        <div id="CompletedAppsDiv" style="display: none">
+                          <h1 style="font-family: 'Cinzel', serif;'">
+                            Your Completed Apps;<br/>
+                             <%= @current_user.submissions %>
+                          </h1>
+                        </div>
+                        <div id="NewAppDiv" style="display: none">
+                          <h1>
+                            Start a New Application;<br/>
+                            <br/>
+                            <%= link_to 'Applications', new_submission_path, class: 'bg-transparent hover:bg-blue-500 text-blue-700 font-semibold hover:text-white py-2 px-4 border border-blue-500 hover:border-transparent rounded' %>
+                          </h1>
+                        </div>
+                        <div id="MyProfileDiv" style="display: none">
+                          <h1>
+                            Edit Your Profile:
+                          </h1>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+  function OverviewClick()
+  {
+    var ov = document.getElementById("OverviewDiv");
+    if (ov.style.display === "none")
+    {
+      ov.style.display = "block";
+      document.getElementById("CompletedAppsDiv").style.display = "none";
+      document.getElementById("NewAppDiv").style.display = "none";
+      document.getElementById("MyProfileDiv").style.display = "none";
+    }
+    else
+    {
+      ov.style.display = "none";
+    }
+  }
+
+  function CompletedAppsClick()
+  {
+    var ca = document.getElementById("CompletedAppsDiv");
+    if (ca.style.display === "none")
+    {
+      ca.style.display = "block";
+      document.getElementById("OverviewDiv").style.display = "none";
+      document.getElementById("NewAppDiv").style.display = "none";
+      document.getElementById("MyProfileDiv").style.display = "none";
+    }
+    else
+    {
+      ca.style.display = "none";
+    }
+  }
+
+  function NewAppsClick()
+  {
+    var na = document.getElementById("NewAppDiv");
+    if (na.style.display === "none")
+    {
+      na.style.display = "block";
+      document.getElementById("OverviewDiv").style.display = "none";
+      document.getElementById("CompletedAppsDiv").style.display = "none";
+      document.getElementById("MyProfileDiv").style.display = "none";
+    }
+    else
+    {
+      na.style.display = "none";
+    }
+  }
+
+  function MyProfileClick()
+  {
+    var mp = document.getElementById("MyProfileDiv");
+    if (mp.style.display === "none")
+    {
+      mp.style.display = "block";
+      document.getElementById("CompletedAppsDiv").style.display = "none";
+      document.getElementById("NewAppDiv").style.display = "none";
+      document.getElementById("OverviewDiv").style.display = "none";
+    }
+    else
+    {
+      mp.style.display = "none";
+    }
+  }
+</script>

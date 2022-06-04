@@ -1,0 +1,359 @@
+/*
+
+      Import Google Fonts:
+
+      font-family: 'Audiowide', cursive;
+
+      font-family: 'Black Ops One', cursive;
+
+      font-family: 'Cinzel', serif;
+
+      font-family: 'Crimson Text', serif;
+
+      font-family: 'IBM Plex Serif', serif;
+
+      font-family: 'Orbitron', sans-serif;
+
+      font-family: 'Quantico', sans-serif;
+
+      font-family: 'Righteous', cursive;
+
+      font-family: 'Source Code Pro', monospace;
+
+*/
+
+.checkbox {
+  margin-top: -10px;
+  margin-bottom: 10px;
+  span {
+    margin-left: 20px;
+    font-weight: normal;
+  }
+}
+
+#session_remember_me {
+  width: auto;
+  margin-left: 0;
+}
+
+a.nav_lnk:hover
+{
+  color: #0f0;
+  cursor: crosshair;
+}
+
+/* Start About Page Styling */
+.about
+{
+  background: url('https://image.freepik.com/free-vector/digial-circuit-diagram-technology-background_1017-28403.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  background-attachment: fixed;
+}
+.abt_div
+{
+  text-align: center;
+  padding: 20px;
+  border: 3px solid #000;
+  box-shadow: 10px 10px 13px #C0C0C0;
+  margin: 20px;
+  background-color: rgba(0,0,255,0.8);
+}
+.abt_div_h1
+{
+  font-family: 'Audiowide', cursive;
+  font-size: 30px;
+  text-shadow: 10px 10px 12px #000;
+  color: #FFF;
+}
+.abt_vid_btn
+{
+  font-family: 'Orbitron', sans-serif;
+  padding: 10px;
+  margin-left: 20px;
+  border: 3px solid #000;
+  box-shadow: 10px 10px 12px #FFF;
+  background-color: #00F;
+}
+.vid_div
+{
+  margin: 20px auto;
+  background-color: #FFF;
+  padding: 20px;
+  text-align: center;
+}
+.abt_vid_ttl
+{
+  font-family: 'Cinzel', serif;
+  font-size: 25px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+  text-align: center;
+}
+/* End About Page Styling */
+
+/* Start Form Input Styling */
+.form_input
+{
+  border: 3px solid #000;
+  box-shadow: 5px 5px 7px #C0C0C0;
+  border-radius: 15px;
+  align: center;
+  float: center;
+  font-family: 'Quantico', sans-serif;
+  color: #FFA500;
+  padding: 10px;
+  text-align: center;
+  margin-bottom: 25px;
+}
+.form_text
+{
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+.submit_button
+{
+  border: 3px solid #FFA500;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 20px;
+  box-shadow: 10px 10px 13px #000;
+  font-family: 'Source Code Pro', monospace;
+  font-size: 20px;
+  text-align: center;
+}
+.submit_button:hover
+{
+  border: 3px solid #000;
+  border-radius: 15px;
+  padding: 15px;
+  margin: 20px;
+  box-shadow: 14px 14px 17px #FFA500;
+  font-family: 'Black Ops One', cursive;
+  font-size: 25px;
+  text-align: center;
+  color: #FFA500;
+}
+/* End Form Input Styling */
+
+/* Start User Screen Styling */
+.user
+{
+  /*background: url('https://wallpapercave.com/wp/wp4349160.jpg');*/
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding: 30px;
+  background-attachment: fixed;
+}
+.userButton
+{
+  border: 2px solid #0000FF;
+  border-radius: 15px;
+  background-color: #000;
+  color: #FFF;
+  padding: 15px;
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  text-decoration: none;
+  box-shadow: 8px 8px 10px #0000FF;
+  margin-right: 15px;
+}
+.userButton:hover
+{
+  border: 3px solid #000;
+  border-radius: 15px;
+  background-color: #0000FF;
+  color: #000;
+  padding: 20px;
+  font-family: 'Black Ops One', cursive;
+  font-size: 20px;
+  text-decoration: overline;
+  box-shadow: 8px 8px 10px #000;
+  margin-right: 15px;
+}
+.UserIntel
+{
+  background-color: #FFF;
+  border: 3px double #0000FF;
+  padding: 30px;
+  box-shadow: 10px 10px 13px #0000FF;
+  width: 50%;
+  align: center;
+  margin: 100px auto;
+}
+.agency_Title
+{
+  font-family: 'Cinzel', serif;
+  font-size: 30px;
+  text-shadow: 10px 10px 13px #000;
+  text-decoration: overline;
+  text-align: center;
+}
+.agency_Intel
+{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 15px;
+}
+.agency_Intel a
+{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 15px;
+  color: #0000FF;
+}
+.DivButtonShow
+{
+  align: center;
+  text-align: center;
+  border-left: 3px solid #FFA500;
+  border-bottom: 3px solid #FFA500;
+  border-right: 3px solid #FFA500;
+  box-shadow: 10px 10px 13px #000;
+  padding: 20px;
+  width: 75%;
+  margin: 20px auto;
+}
+.AppButtons
+{
+  background-color: rgba(0,0,0,0.8);
+  color: #FFA500;
+  border: 3px solid #FFA500;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: 'Black Ops One', cursive;
+}
+.AppButtons:hover
+{
+  background-color: rgba(255,165,0,0.8);
+  color: #000;
+  border: 5px double #FFA500;
+  border-radius: 10px;
+  padding: 20px;
+  font-family: 'Orbitron', sans-serif;
+}
+/* End User Screen Styling */
+
+/* Start Home Screen Styling */
+.home
+{
+background: url('https://image.freepik.com/free-vector/future-abstract-technology-background_1406-110.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+width: 100%;
+height: 100%;
+padding: 30px;
+background-attachment: fixed;
+}
+.hme_div
+{
+  text-align: center;
+  padding: 20px;
+  border: 3px solid #000;
+  box-shadow: 10px 10px 13px #C0C0C0;
+  margin: 20px;
+  background-color: rgba(0,0,0,0.8);
+  float: center;
+}
+.hme_div_h1
+{
+  font-family: 'Black Ops One', cursive;
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 10px 10px 13px #C0C0C0;
+  color: #FFF;
+}
+.hme_div_p
+{
+  font-family: 'Cinzel', serif;
+  font-size: 20px;
+  color: #FFF;
+  text-align: center;
+}
+.hme_div1
+{
+  border: 3px solid #00F;
+  box-shadow: 10px 10px 13px #00F;
+  margin: 20px;
+  margin-top: 60px;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.8);
+  float: center;
+}
+.hme_div1_h1
+{
+  font-family: 'Orbitron', sans-serif;
+  font-size: 40px;
+  text-align: center;
+  color: #00F;
+  text-shadow: 10px 10px 13px #FFF;
+}
+.hme_div1_p
+{
+  font-family: 'Cinzel', serif;
+  color: #FFF;
+  text-align: center;
+  font-size: 20px;
+  margin-top: 10px;
+}
+.hme_div2
+{
+  border: 3px solid #0F0;
+  box-shadow: 10px 10px 13px #0F0;
+  margin: 20px;
+  margin-top: 60px;
+  padding: 20px;
+  background-color: rgba(0,0,0,0.8);
+  float: center;
+}
+.hme_div2_h1
+{
+  font-family: 'Audiowide', cursive;
+  font-size: 40px;
+  text-align: center;
+  text-shadow: 10px 10px 13px #FFF;
+  color: #0F0;
+}
+.hme_div2_p
+{
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 20px;
+  margin-top: 10px;
+  color: #FFF;
+  text-align: center;
+}
+/* End Home Screen Styling */
+
+/* Start Contact Screen Styling */
+.contact
+{
+  background-image: url('https://wallpaperaccess.com/full/210929.jpg');
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  padding: 30px;
+}
+.cnt_div
+{
+  background-color: rgba(255,255,255,0.4);
+  border: 3px solid #000;
+  box-shadow: 10px 10px 10px #000;
+  text-align: center;
+  padding: 20px;
+  margin: 20px auto;
+}
+.cnt_div_h1
+{
+  font-family: 'Audiowide', cursive;
+  font-size: 30px;
+  text-shadow: 10px 10px 12px #000;
+  color: #FFF;
+}
+.cnt_div_p
+{
+  font-family: 'IBM Plex Serif', serif;
+  font-size: 20px;
+  color: #000;
+}
+/* End Contact Screen Styling */

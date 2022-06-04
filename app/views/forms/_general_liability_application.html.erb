@@ -1,0 +1,326 @@
+<%= form_tag "/submissions" do %>
+
+  <p> Start General Information Gathering </p>
+  <%= label_tag(:policy_from_date, 'Policy From Date:', class: 'form_text') %>
+  <%= date_field_tag :policy_from_date, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:policy_to_date, 'Policy To Date:', class: 'form_text') %>
+  <%= date_field_tag :policy_to_date, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:home_state, 'Home State:', class: 'form_text') %>
+  <select name="home_state" id="home_state" class="form_input">
+  	<option value="AL">Alabama</option>
+  	<option value="AK">Alaska</option>
+  	<option value="AZ">Arizona</option>
+  	<option value="AR">Arkansas</option>
+  	<option value="CA">California</option>
+  	<option value="CO">Colorado</option>
+  	<option value="CT">Connecticut</option>
+  	<option value="DE">Delaware</option>
+  	<option value="DC">District Of Columbia</option>
+  	<option value="FL">Florida</option>
+  	<option value="GA">Georgia</option>
+  	<option value="HI">Hawaii</option>
+  	<option value="ID">Idaho</option>
+  	<option value="IL">Illinois</option>
+  	<option value="IN">Indiana</option>
+  	<option value="IA">Iowa</option>
+  	<option value="KS">Kansas</option>
+  	<option value="KY">Kentucky</option>
+  	<option value="LA">Louisiana</option>
+  	<option value="ME">Maine</option>
+  	<option value="MD">Maryland</option>
+  	<option value="MA">Massachusetts</option>
+  	<option value="MI">Michigan</option>
+  	<option value="MN">Minnesota</option>
+  	<option value="MS">Mississippi</option>
+  	<option value="MO">Missouri</option>
+  	<option value="MT">Montana</option>
+  	<option value="NE">Nebraska</option>
+  	<option value="NV">Nevada</option>
+  	<option value="NH">New Hampshire</option>
+  	<option value="NJ">New Jersey</option>
+  	<option value="NM">New Mexico</option>
+  	<option value="NY">New York</option>
+  	<option value="NC">North Carolina</option>
+  	<option value="ND">North Dakota</option>
+  	<option value="OH">Ohio</option>
+  	<option value="OK">Oklahoma</option>
+  	<option value="OR">Oregon</option>
+  	<option value="PA">Pennsylvania</option>
+  	<option value="RI">Rhode Island</option>
+  	<option value="SC">South Carolina</option>
+  	<option value="SD">South Dakota</option>
+  	<option value="TN">Tennessee</option>
+  	<option value="TX">Texas</option>
+  	<option value="UT">Utah</option>
+  	<option value="VT">Vermont</option>
+  	<option value="VA">Virginia</option>
+  	<option value="WA">Washington</option>
+  	<option value="WV">West Virginia</option>
+  	<option value="WI">Wisconsin</option>
+  	<option value="WY">Wyoming</option>
+  </select>
+  <p> End General Information Gathering </p>
+
+
+  <p> Start GL Location </p>
+  <%= label_tag(:gl_classification_value, 'GL Classification Value:', class: 'form_text') %>
+  <%= number_field_tag :gl_classification_value, '', class: 'form_input', placeholder: '60010-00' %>
+  <!-- Create a field to populate with company type (Pool Cleaning | AC | etc.) and grab the cass code to populate here -->
+
+  <%= label_tag(:gl_location_number, 'GL Location Number:', class: 'form_text') %>
+  <%= number_field_tag :gl_location_number, '', class: 'form_input', placeholder: '1' %>
+
+  <%= label_tag(:gl_location_address, 'GL Location Address:', class: 'form_text') %>
+  <%= text_field_tag :gl_location_address, '', class: 'form_text', placeholder: '404 Hacker BLVD' %>
+
+  <%= label_tag(:gl_location_city, 'GL Location City:', class: 'form_text') %>
+  <%= text_field_tag :gl_location_city, '', class: 'form_text', placeholder: 'Rockwall' %>
+
+  <%= label_tag(:gl_location_state, 'GL Location State:', class: 'form_text') %>
+  <select name="gl_location_state" id="gl_location_state" class="form_input">
+  	<option value="AL">Alabama</option>
+  	<option value="AK">Alaska</option>
+  	<option value="AZ">Arizona</option>
+  	<option value="AR">Arkansas</option>
+  	<option value="CA">California</option>
+  	<option value="CO">Colorado</option>
+  	<option value="CT">Connecticut</option>
+  	<option value="DE">Delaware</option>
+  	<option value="DC">District Of Columbia</option>
+  	<option value="FL">Florida</option>
+  	<option value="GA">Georgia</option>
+  	<option value="HI">Hawaii</option>
+  	<option value="ID">Idaho</option>
+  	<option value="IL">Illinois</option>
+  	<option value="IN">Indiana</option>
+  	<option value="IA">Iowa</option>
+  	<option value="KS">Kansas</option>
+  	<option value="KY">Kentucky</option>
+  	<option value="LA">Louisiana</option>
+  	<option value="ME">Maine</option>
+  	<option value="MD">Maryland</option>
+  	<option value="MA">Massachusetts</option>
+  	<option value="MI">Michigan</option>
+  	<option value="MN">Minnesota</option>
+  	<option value="MS">Mississippi</option>
+  	<option value="MO">Missouri</option>
+  	<option value="MT">Montana</option>
+  	<option value="NE">Nebraska</option>
+  	<option value="NV">Nevada</option>
+  	<option value="NH">New Hampshire</option>
+  	<option value="NJ">New Jersey</option>
+  	<option value="NM">New Mexico</option>
+  	<option value="NY">New York</option>
+  	<option value="NC">North Carolina</option>
+  	<option value="ND">North Dakota</option>
+  	<option value="OH">Ohio</option>
+  	<option value="OK">Oklahoma</option>
+  	<option value="OR">Oregon</option>
+  	<option value="PA">Pennsylvania</option>
+  	<option value="RI">Rhode Island</option>
+  	<option value="SC">South Carolina</option>
+  	<option value="SD">South Dakota</option>
+  	<option value="TN">Tennessee</option>
+  	<option value="TX">Texas</option>
+  	<option value="UT">Utah</option>
+  	<option value="VT">Vermont</option>
+  	<option value="VA">Virginia</option>
+  	<option value="WA">Washington</option>
+  	<option value="WV">West Virginia</option>
+  	<option value="WI">Wisconsin</option>
+  	<option value="WY">Wyoming</option>
+  </select>
+
+  <%= label_tag(:gl_location_zip, 'GL Location Zip:', class: 'form_text') %>
+  <%= text_field_tag :gl_location_zip, '', class: 'form_input', placeholder: '75189', maxlength: 5 %>
+  <p> End GL Location </p>
+
+  <p> Start GL Exposure </p>
+  <%= label_tag(:gl_exposure_value, 'GL Exposure Value:', class: 'form_text') %>
+  <select name="gl_exposure_value" id="gl_exposure_value" class="form_input">
+    <option value="100000">$100,000</option>
+    <option value="300000">$300,000</option>
+    <option value="500000">$500,000</option>
+    <option value="1000000">$1,000,000</option>
+    <option value="2000000">$2,000,000</option>
+  </select>
+  <!-- $100,000  $300,000 $500,000 $1,000,000 $2,000,000 Drop Down Value -->
+
+  <%= label_tag(:gl_exposure_iso_standard, 'GL Exposure ISO Standard:', class: 'form_text') %>
+  <select name="gl_exposure_iso_standard" id="gl_exposure_iso_standard" class="form_input">
+    <option value="True">True</option>
+    <option value="False">False</option>
+  </select>
+  <!-- True /False Statements Drop Down List -->
+
+  <%= label_tag(:gl_exposure_epsoure_to_unit_divisor, 'GL Exposure to Unit Divisor:', class: 'form_text') %>
+  <%= text_field_tag :gl_exposure_epsoure_to_unit_divisor, '', class: 'form_input', placeholder: '$1,000', maxlength: 6 %>
+  <p> End GL Exposure </p>
+
+  <p> Start Underwriting Questions </p>
+  <%= label_tag(:answers_value, 'Answers Value:', class: 'form_text') %>
+  <select name="answers_value" id="answers_value" class="form_input">
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+  </select>
+
+  <%= label_tag(:answers_services, 'Business Entity:', class: 'form_text') %>
+  <%= text_field_tag :answers_services, '', class: 'form_input', placeholder: 'Pools', list: 'biz_entity' %>
+
+  <datalist id="biz_entity">
+    <option>Air Conditioning Equipment ~ Dealers or Distributors</option>
+    <option>Amusement Centers</option>
+    <option>Amusement Parks</option>
+    <option>Antique Stores</option>
+    <option>Anhydrous Ammonia Dealers & Distributors</option>
+    <option>Appliance Distributors ~ Household Type</option>
+    <option>Application Stores ~ Household Type</option>
+    <option>Archery Ranges ~ Indoor</option>
+    <option>Archery Ranges ~ NOC</option>
+    <option>Army & Navy Stores</option>
+    <option>Art Galleries</option>
+    <option>Automobile Parts & Supplies Distributors</option>
+    <option>Automobile Quick Lubricant Services</option>
+    <option>Automobile Parts & Supplies Stores</option>
+    <option>Automobile Repair or Service Shops</option>
+    <option>Automobile Repair Shops ~ Self Service</option>
+    <option>Bakeries</option>
+    <option>Boat Dealers</option>
+    <option>Boat Storage & Morage</option>
+    <option>Boat Yards or Marinas ~ Public</option>
+    <option>Boats ~ Canoes or Rowboats ~ For Rent ~ Not Equipped With Motors</option>
+    <option>Barber or Beauty Shop Supplies Distributors</option>
+    <option>Barber Shops</option>
+    <option>Beauty Parlors & Hair Styling Salons</option>
+    <option>Boats ~ Motor or Snail ~ Rented to Others</option>
+    <option>Boats ~ NOC ~ REnted to Others</option>
+    <option>Bathhouses or Bathing Pavilions</option>
+    <option>Bazaars ~ Operated By The Insured</option>
+    <option>Beach Chairs & Umbrellas ~ Rented to Others</option>
+    <option>Beaches ~ Bathing ~ Commercially Operated</option>
+    <option>Beverage Distributors ~ Alcholic Other Than Beer</option>
+    <option>Beverage Distributors ~ NonAlcholic & Beer</option>
+    <option>Beverage Stores ~ Liquor & Wine</option>
+    <option>Beverage Stores ~ Soft Drinks & Beer</option>
+    <option>Bicycles ~ Rented to Others</option>
+    <option>Bicycles ~ Sales & Servicing</option>
+    <option>Billiard or Pool Halls</option>
+    <option>Book & Magazine Stores</option>
+    <option>Bowling Lanes</option>
+    <option>Building Material Dealers</option>
+    <option>Building Material Dealers ~ Secondhand Materials</option>
+    <option>Camera & Photographic Equipment Stores</option>
+    <option>Camper or Travel Trailer Sales Agencies</option>
+    <option>Campgrounds</option>
+    <option>Candy of Conectionery Stores</option>
+    <option>Car Washes</option>
+    <option>Car Washes ~ Self-Services</option>
+    <option>Carnival or Circus Companies</option>
+    <option>Carnicals ~ Outside (Sponsor's Risk Only)</option>
+    <option>Carnivals or Ciruses ~ In Tents (Sponsor's Risk Only)</option>
+    <option>Carpet, Rug, or Upholstery Cleaning ~ Shop Only</option>
+    <option>Catalog or Premium Coupon Redemption Stores</option>
+    <option>Caterers</option>
+    <option>Chairs ~ Rented to Others</option>
+    <option>Chemical Distributors</option>
+    <option>Children's Playcenters ~ Indoor</option>
+    <option>Clothing or Wearing Apparel Distributors</option>
+    <option>Clothing or Wearing Apparel Stores</option>
+    <option>Clubs ~ Country or Golf</option>
+    <option>Collectibles & Memorabilia Stores</option>
+    <option>Computer Stores</option>
+    <option>Concessionaires ~ Check Room, Shoeshine, or Toilet Concessions in Hotels, Restaurants, Railrod Stations, etc.</option>
+    <option>Concessionaires</option>
+    <option>Contractors' Equipment ~ Cranes, Derricks, Power Shovels, & Equipment Incidental Thereto ~ REnted to Others with Operators</option>
+    <option>Contractors' Equipment Dealers ~ Ladders, Excluding Hoists, Scaffolds, or Towers</option>
+    <option>Contractors' Equipment Dealers ~ Ladders, Hoists, Scaffolds or Towers</option>
+    <option>Contractors' Equipment ~ Earth Moving Equipment other than cranes, derricks, and power shovels ~ rented to others without operators</option>
+    <option>Contractors' Equipment ~ Excluding Automobiles ~ Rented to others WITH operators - NOC</option>
+    <option>Contractors' Equipment ~ Excluding Automobiles ~ Rented to others WITHOUT Operators - NOC</option>
+    <option>Contractors' Equipment ~ Hod or Material Platform Hoists & Equipment Incidental Thereto ~ Rented to Others WITH Operators</option>
+    <option>Contractors' Equipment ~ Hod or Material Platform Hoists & Equipment Incidental Thereto ~ Rented to Other WITHOUT Operators</option>
+    <option>Contractors' Equipment ~ Ladders, Scaffolds, Scaffolding, Sidewalks, Bridges, Towers, & Equipment Incidental Thereto ~ Rented to Others</option>
+    <option>Contractors’ Equipment – scaffolds, sidewalks, bridges, hod or material hoist towers – rented to others – installation, repair or removal operations only</option>
+    <option>Contractors’ Equipment – steam boilers, compressors, air pressure tanks, pneumatic tools and equipment incidental thereto – rented to others with operators</option>
+    <option>Contractors’ Equipment – steam boilers, compressors, air pressure tanks, pneumatic tools and equipment incidental thereto – rented to others without operators</option>
+    <option>Copying & Duplicating Services ~ Retail</option>
+    <option>Cosmetic, Hari or Skin Preparation Stores</option>
+    <option>Cotton or Wool Merchants</option>
+    <option>Dairy products or Butter & Egg Stores</option>
+    <option>Dance Halls or Ballrooms</option>
+  </datalist>
+
+  <%= label_tag(:answers_business_code, 'Business Code:', class: 'form_text') %>
+  <%= text_field_tag :answers_business_code, '', class: 'form_input' %>
+
+  <%= label_tag(:answers_value_source, 'Value Source:', class: 'form_text') %>
+  <%= text_field_tag :answers_value_source, '', class: 'form_input', placeholder: 'Default' %>
+
+  <%= label_tag(:answers_business_type, 'Business Type:', class: 'form_text') %>
+  <%= text_field_tag :answers_business_type, '', class: 'form_input', placeholder: 'Laundry Facility' %>
+  <!-- Drop Down List from Business Types -->
+  <p> End Underwriting Questions </p>
+
+  <p> Start Limits &amp; Deductibles </p>
+  <%= label_tag(:lad_per_occurrence_limit, 'Per Occurrence Limit:', class: 'form_text') %>
+  <select id="lad_per_occurrence_limit" name="lad_per_occurrence_limit" class="form_input">
+    <option value="100000">$100,000</option>
+    <option value="300000">$300,000</option>
+    <option value="500000">$500,000</option>
+    <option value="1000000">$1,000,000</option>
+    <option value="2000000">$2,000,000</option>
+  </select>
+  <!-- $100,000  $300,000 $500,000 $1,000,000 $2,000,000 Drop Down Value -->
+
+  <%= label_tag(:lad_general_aggregate_limit, 'General Aggregate Limit:', class: 'form_text') %>
+  <select id="lad_general_aggregate_limit" name="lad_general_aggregate_limit" class="form_input">
+    <option value="100000">$100,000</option>
+    <option value="300000">$300,000</option>
+    <option value="500000">$500,000</option>
+    <option value="1000000">$1,000,000</option>
+    <option value="2000000">$2,000,000</option>
+  </select>
+  <!-- $100,000  $300,000 $500,000 $1,000,000 $2,000,000 Drop Down Value -->
+
+  <%= label_tag(:lad_deductible, 'Deductible:', class: 'form_text') %>
+  <%= text_field_tag :lad_deductible, '', class: 'form_input', placeholder: '$1,000' %>
+  <p> End Limits &amp; Deductibles </p>
+
+  <p> Start Optional Coverage </p>
+  <%= label_tag(:oc_selected, 'Selected:', class: 'form_text') %>
+  <select id="oc_selected" name="oc_selected" class="form_input">
+    <option value="True">True</option>
+    <option value="False">False</option>
+  </select>
+  <!-- Drop Down Selection (True/False) -->
+
+  <%= label_tag(:oc_counts_toward_minimum_premium, 'Counts Towards Minimum Premium:', class: 'form_text') %>
+  <select id="oc_counts_toward_minimum_premium" name="oc_counts_toward_minimum_premium" class="form_input">
+    <option value="True">True</option>
+    <option value="False">False</option>
+  </select>
+  <!-- Drop Down Selection (True/False) -->
+
+  <%= label_tag(:oc_count, 'Count:', class: 'form_text') %>
+  <%= text_field_tag :oc_count, '', class: 'form_input', placeholder: '0' %>
+
+  <%= label_tag(:oc_value, 'TRIA (Yes/No):', class: 'form_text') %>
+  <select id="oc_value" name="oc_value" class="form_input">
+    <option value="Yes">Yes</option>
+    <option value="No">No</option>
+  </select>
+  <!-- Drop Down Yes/No -->
+
+  <%= label_tag(:oc_meets_guidelines, 'Meets Guidlines', class: 'form_text') %>
+  <select id="oc_meets_guidelines" name="oc_meets_guidelines" class="form_input">
+    <option value="True">True</option>
+    <option value="False">False</option>
+  </select>
+  <!-- Select Drop Down Yes/No -->
+  <p> End Optional Coverage </p>
+
+ <button type="submit" value="Submit" class="submit_button" onclick="QuoteClick()">Submit</button>
+
+<% end %>

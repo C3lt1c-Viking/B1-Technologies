@@ -1,0 +1,130 @@
+<%= form_tag do %>
+
+  <p> Collect Version & Bindable Information </p>
+
+  <%= label_tag(:version, 'Version:', class: 'form_text') %>
+  <%= text_field_tag :version, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:client_transaction_reference_id, 'Client Transaction Reference ID:', class: 'form_text') %>
+  <%= text_field_tag :client_transaction_reference_id, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:bindable, 'Bindable:', class: 'form_text') %>
+  <%= text_field_tag :bindable, "", class: 'form_input' %><br/>
+
+  <p> End of Collect Version & Bindable Information </p>
+<br/>
+<br/>
+
+  <p> Collect Policy Proposal &amp; Application Form </p>
+
+  <%= label_tag(:policy_effective_date, 'Policy Effective Date:', class: 'form_text') %>
+  <%= date_field_tag :policy_effective_date, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:policy_expiration_date, 'Policy Expiration Date:', class: 'form_text') %>
+  <%= date_field_tag :policy_expiration_date, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:home_state, 'Home State:', class: 'form_text' ) %>
+  <%= text_field_tag :home_state, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:value, 'Value', class: 'form_text') %>
+  <%= text_field_tag :value, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:display, 'Display:', class: 'form_text') %>
+  <%= text_field_tag :display, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:value_type, 'Value Type:', class: 'form_text') %>
+  <%= text_field_tag :value_type, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:retrieval_url, 'Retrieval URL:', class: 'form_text') %>
+  <%= text_field_tag :retrieval_url, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:title, 'Title:', class: 'form_text') %>
+  <%= text_field_tag :title, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:form_number, 'Form Number:', class: 'form_text') %>
+  <%= text_field_tag :form_number, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:edition, 'Edition:', class: 'form_text') %>
+  <%= text_field_tag :edition, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:form_type, 'Form Type:', class: 'form_text') %>
+  <%= text_field_tag :form_type, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:attached, 'Attached:', class: 'form_text') %>
+  <%= text_field_tag :attached, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:attachment_guidance, 'Attachment Guidance:', class: 'form_text') %>
+  <%= text_field_tag :attachment_guidance, "", class: 'form_input' %><br/>
+
+  <p> End Collect Policy Proposal &amp; Application Form </p>
+<br/>
+<br/>
+  <p> Policy Forms: </p>
+
+  <%= label_tag(:policy_value, 'Policy Value:', class: 'form_text') %>
+  <%= text_field_tag :policy_value, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:policy_display, 'Policy Display:', class: 'form_text') %>
+  <%= text_field_tag :policy_display, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:policy_value_type, 'Policy Value Type:', class: 'form_text') %>
+  <%= text_field_tag :policy_value_type, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:policy_retrieval_url, 'Policy Retrieval URL:', class: 'form_text') %>
+  <%= text_field_tag :policy_retrieval_url, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:policy_title, 'Policy Title:', class: 'form_text') %>
+  <%= text_field_tag :policy_title, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:policy_form_number, 'Policy Form Number:', class: 'form_text') %>
+  <%= text_field_tag :policy_form_number, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:policy_edition, 'Policy Edition:', class: 'form_text') %>
+  <%= text_field_tag :policy_edition, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:policy_form_type, 'Policy Form Type:', class: 'form_text') %>
+  <%= text_field_tag :policy_form_type, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:policy_attached, 'Policy Attached:', class: 'form_text') %>
+  <%= text_field_tag :policy_attached, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:policy_attachment_guidance, 'Policy Attachment Guidance:', class: 'form_text') %>
+  <%= text_field_tag :policy_attachment_guidance, "", class: 'form_input' %><br/>
+
+  <p> Subjectivities: </p>
+
+  <%= label_tag(:subject_code, 'Code:', class: 'form_text') %>
+  <%= text_field_tag :subject_code, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:subject_description, 'Subject Description:', class: 'form_text') %>
+  <%= text_field_tag :subject_description, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:subject_index, 'Subject Index:', class: 'form_text') %>
+  <%= text_field_tag :subject_index, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:subject_is_hidden, 'Subject is Hidden:', class: 'form_text') %>
+  <%= text_field_tag :subject_is_hidden, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:transaction_url, 'Transaction URL:', class: 'form_text') %>
+  <%= text_field_tag :transaction_url, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:transaction_id, 'Transaction ID:', class: 'form_text') %>
+  <%= text_field_tag :transaction_it, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:policy_number, 'Policy Number:', class: 'form_text') %>
+  <%= text_field_tag :policy_number, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:submission_number, 'Submission Number:', class: 'form_text') %>
+  <%= text_field_tag :submission_number, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:status, 'Status:', class: 'form_text') %>
+  <%= text_field_tag :status, "", class: 'form_input' %><br/>
+
+  <%= label_tag(:quote_letter_url, 'Quote Letter URL:', class: 'form_text') %>
+  <%= text_field_tag :quote_letter_url, "", class: 'form_input' %>
+
+  <p> End Policy Forms </p>
+
+  <button type="submit" value="Submit" class="submit_button" onclick="Quote1Click()">Submit</button>
+
+  <% end %>
